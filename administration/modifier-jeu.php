@@ -1,5 +1,5 @@
 <?php
-    $base = "mondepokemon";
+    $base = "esporthq";
     $hote = "localhost";
     $usager = "root";
     $motDePasse = "sudoroot";
@@ -9,15 +9,15 @@
 
     $numero = $_GET["numero"];
 
-    $LIRE_POKEMON = "SELECT * FROM pokemon WHERE idpokemon = $numero";
+    $LIRE_JEU = "SELECT * FROM jeu WHERE idJeu = $numero";
     //$curseurPokemon = $pdo->query($LIRE_POKEMON);
     //$pokemon = $curseurPokemon->fetch();
-    $requeteLirePokemon = $pdo->prepare($LIRE_POKEMON);
-    $requeteLirePokemon->execute();
-    $pokemon = $requeteLirePokemon->fetch();
+    $requeteLireJeu = $pdo->prepare($LIRE_JEU);
+    $requeteLireJeu->execute();
+    $jeu = $requeteLireJeu->fetch();
 
-    //print_r($pokemon);
-    //var_dump($pokemon);
+    //print_r($jeu);
+    //var_dump($jeu);
 ?>
 
 <!doctype html>
@@ -28,38 +28,51 @@
 </head>
 <body>
 	<header>
-		<h1>Administration du monde des pokemons</h1>
+		<h1>Administration des jeux eSports</h1>
 		<nav></nav>
 	</header>
 	
 	<section id="contenu">
-		<header><h2>Modifier un pokemon</h2></header>
-		<form method="post" action="action-modifier-pokemon.php">
-		
+		<header><h2>Modifier un jeu</h2></header>
+		<form method="post" action="action-modifier-jeu.php">
 			<div>
 				<label for="nom">Nom</label>
-				<input type="text" name="nom" id="nom" value="<?=$pokemon["nom"]?>"/>
+				<input type="text" name="nom" id="nom" value="<?=$jeu["nom"]?>"/>
 			</div>
 		
 			<div>
-				<label for="type">Type</label>
-				<input type="text" name="type" id="type" value="<?=$pokemon["type"]?>"/>
+				<label for="editeur">Éditeur</label>
+				<input type="text" name="editeur" id="editeur" value="<?=$jeu["editeur"]?>"/>
 			</div>
 			
 			<div>
-				<label for="generation">Generation</label>
-				<input type="number" name="generation" id="generation" value="<?=$pokemon["generation"]?>"/>
+				<label for="description">Description</label>
+				<textarea name="description" id="description"><?=$jeu["description"]?></textarea>
 			</div>
 			
 			<div>
-				<label for="resume">Resume</label>
-				<textarea name="resume" id="resume"><?=$pokemon["resume"]?></textarea>
+				<label for="date-publication">Année de publication</label>
+				<input type="date" id="date-publication" name="date-publication" value="<?=$jeu["anneePublication"]?>"/>
 			</div>
 			
-			<input type="hidden" name="id" value="<?=$pokemon["idPokemon"]?>"/>
+			<div>
+				<label for="cash-prize-max">Plus grand cash-prize</label>
+				<input type="number" id="cash-prize-max" name="cash-prize-max" value="<?=$jeu["cashPrizeMax"]?>"/>
+			</div>
+			
+			<div>
+				<label for="spectateurs-max">Plus grand nombre de spectateurs</label>
+				<input type="number" id="spectateurs-max" name="spectateurs-max" value="<?=$jeu["spectateursMax"]?>"/>
+			</div>
+			
+			<div>
+				<label for="dernier-tournoi">Dernier gros tournoi</label>
+				<input type="text" id="dernier-tournoi" name="dernier-tournoi" value="<?=$jeu["dernierTournoi"]?>"/>
+			</div>
+			
+			<input type="hidden" name="id" value="<?=$jeu["idJeu"]?>"/>
 			
 			<input type="submit"/>
-			
 		</form>
 	</section>
 	

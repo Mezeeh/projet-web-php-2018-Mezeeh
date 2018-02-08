@@ -2,12 +2,19 @@
 	//print_r($_POST);
 	
 	$nom = $_POST["nom"];
-	$type = $_POST["type"];
-	$generation = $_POST["generation"];
-	$resume = $_POST["resume"];
-	$id = $_POST["id"];
+	$editeur = $_POST["editeur"];
+	$description = $_POST["description"];
+	$anneePublication = $_POST["date-publication"];
+	$cashPrizeMax = $_POST["cash-prize-max"];
+	$spectateursMax = $_POST["spectateurs-max"];
+	$dernierTournoi = $_POST["dernier-tournoi"];
+	$idJeu = $_POST["id"];
 	
-	$SQL_MODIFIER_JEU = "UPDATE pokemon SET nom = '".$nom."', type = '".$type."', generation = '".$generation."', resume = '".$resume."' WHERE idPokemon = " .$id;
+	$SQL_MODIFIER_JEU = "UPDATE pokemon SET nom = '".$nom."', editeur = '".$editeur."', description = '".$description."', 
+	anneePublication = '".$anneePublication."', cashPrizeMax = '".$cashPrizeMax."', spectateursMax = '".$spectateursMax."', 
+	dernierTournoi = '".$dernierTournoi."' WHERE idJeu = " .$idJeu;
+	
+	//echo $SQL_MODIFIER_JEU;
 	
 	include_once "base-de-donnees.php";
 	
