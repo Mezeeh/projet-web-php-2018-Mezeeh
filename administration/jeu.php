@@ -1,11 +1,5 @@
 <?php
-    $base = "esporthq";
-    $hote = "localhost";
-    $usager = "root";
-    $motDePasse = "sudoroot";
-
-    $dsn = 'mysql:dbname='. $base . ';host=' . $hote;
-    $pdo = new PDO($dsn, $usager, $motDePasse);
+    include_once "base-de-donnees.php";
 
     $numero = $_GET["numero"];
 

@@ -3,8 +3,6 @@
 	
 	$idJeu = $_POST["id"];
 	
-	//print_r($supprimer);
-	
 	if(!empty($_POST["confirmation-oui"])){
 		$SQL_EFFACER_JEU = "DELETE FROM jeu WHERE idJeu = " .$idJeu;
 	
