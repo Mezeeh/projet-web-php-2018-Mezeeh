@@ -36,7 +36,7 @@
                    <!--<a href="jeu.php?numero=<?=$jeu["idJeu"]?>"><?=$jeu["nom"]?></a>-->
 				   <?=$jeu["nom"]?>
 				   <a href="modifier-jeu.php?numero=<?=$jeu["idJeu"]?>">Modifier</a>
-				   Supprimer
+				   <a href="supprimer-jeu.php?numero=<?=$jeu["idJeu"]?>">Supprimer</a>
                </div> 
         <?php
             }

@@ -1,0 +1,20 @@
+<?php
+	//print_r($_POST);
+	
+	$idJeu = $_POST["id"];
+	
+	//print_r($supprimer);
+	
+	if(!empty($_POST["confirmation-oui"])){
+		$SQL_EFFACER_JEU = "DELETE FROM jeu WHERE idJeu = " .$idJeu;
+	
+		include_once "base-de-donnees.php";
+		
+		//echo $SQL_EFFACER_JEU;
+		
+		$requeteEffacerJeu = $pdo->prepare($SQL_EFFACER_JEU);
+		$requeteEffacerJeu->execute();
+	}
+	
+	
+?>
