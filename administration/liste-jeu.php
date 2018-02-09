@@ -33,10 +33,10 @@
             foreach($listeJeu as $jeu)
             {?>
                <div>
-                   <!--<a href="jeu.php?numero=<?=$jeu["idJeu"]?>"><?=$jeu["nom"]?></a>-->
+                   <!--<a href="jeu.php?jeu=<?=$jeu["idJeu"]?>"><?=$jeu["nom"]?></a>-->
 				   <?=$jeu["nom"]?>
-				   <a href="modifier-jeu.php?numero=<?=$jeu["idJeu"]?>">Modifier</a>
-				   <a href="supprimer-jeu.php?numero=<?=$jeu["idJeu"]?>">Supprimer</a>
+				   <a href="modifier-jeu.php?jeu=<?=$jeu["idJeu"]?>">Modifier</a>
+				   <a href="supprimer-jeu.php?jeu=<?=$jeu["idJeu"]?>">Supprimer</a>
                </div> 
         <?php
             }

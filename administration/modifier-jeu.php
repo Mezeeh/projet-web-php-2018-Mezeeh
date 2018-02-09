@@ -1,7 +1,13 @@
 <?php
+	if(!empty($_POST["action-modifier-jeu"]))
+	{
+		//echo "formulaire envoye";
+		include "action-modifier-jeu.php";
+	}
+
     include_once "base-de-donnees.php";
 
-    $numero = $_GET["numero"];
+    $numero = $_GET["jeu"];
 
     $LIRE_JEU = "SELECT * FROM jeu WHERE idJeu = $numero";
     $requeteLireJeu = $pdo->prepare($LIRE_JEU);
@@ -26,7 +32,7 @@
 	
 	<section id="contenu">
 		<header><h2>Modifier un jeu</h2></header>
-		<form method="post" action="action-modifier-jeu.php">
+		<form method="post" action="modifier-jeu.php?jeu=<?=$_GET["jeu"]?>">
 			<div>
 				<label for="nom">Nom</label>
 				<input type="text" name="nom" id="nom" value="<?=$jeu["nom"]?>"/>
@@ -64,7 +70,7 @@
 			
 			<input type="hidden" name="id" value="<?=$jeu["idJeu"]?>"/>
 			
-			<input type="submit"/>
+			<input type="submit" name="action-modifier-jeu" value="Enregistrer"/>
 		</form>
 	</section>
 	

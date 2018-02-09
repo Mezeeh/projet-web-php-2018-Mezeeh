@@ -10,7 +10,7 @@
 	$dernierTournoi = $_POST["dernier-tournoi"];
 	$idJeu = $_POST["id"];
 	
-	$SQL_MODIFIER_JEU = "UPDATE pokemon SET nom = '".$nom."', editeur = '".$editeur."', description = '".$description."', 
+	$SQL_MODIFIER_JEU = "UPDATE jeu SET nom = '".$nom."', editeur = '".$editeur."', description = '".$description."', 
 	anneePublication = '".$anneePublication."', cashPrizeMax = '".$cashPrizeMax."', spectateursMax = '".$spectateursMax."', 
 	dernierTournoi = '".$dernierTournoi."' WHERE idJeu = " .$idJeu;
 	
