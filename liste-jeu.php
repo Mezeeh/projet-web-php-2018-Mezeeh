@@ -1,10 +1,13 @@
 <?php
-    include_once "base-de-donnees.php";
+    //include_once "base-de-donnees.php";
     include "accesseur/JeuDAO.php";
 
-    $requeteListeJeux = $pdo->prepare("SELECT * FROM jeu");
+    $listeJeuDAO = new JeuDAO();
+    $listeJeu = $listeJeuDAO -> lireListe();
+
+    /* $requeteListeJeux = $pdo->prepare("SELECT * FROM jeu");
     $requeteListeJeux->execute();
-    $listeJeu = $requeteListeJeux->fetchAll();
+    $listeJeu = $requeteListeJeux->fetchAll(); */
 ?>
 
 <!doctype html>

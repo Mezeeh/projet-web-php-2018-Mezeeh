@@ -2,13 +2,14 @@
     //print_r($_POST);
     //exit(0);
 
-    include "action-ajouter-jeu.php";
-    include "action-supprimer-jeu.php";
-    include_once "base-de-donnees.php";
+    include_once "action-ajouter-jeu.php";
+    include_once "action-supprimer-jeu.php";
+    include_once "base-de-donnees.php";;
 
-    $requeteListeJeux = $pdo->prepare("SELECT * FROM jeu");
-    $requeteListeJeux->execute();
-    $listeJeu = $requeteListeJeux->fetchAll();
+    include_once "../accesseur/JeuDAO.php";
+
+    $listeJeuDAO = new JeuDAO();
+    $listeJeu = $listeJeuDAO -> lireListe();
 ?>
 
 <!doctype html>

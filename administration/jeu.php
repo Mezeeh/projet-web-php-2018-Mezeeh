@@ -1,12 +1,10 @@
 <?php
-    include_once "base-de-donnees.php";
+    include "accesseur/JeuDAO.php";
 
-    $numero = $_GET["numero"];
+    $idJeu = $_GET["jeu"];
 
-    $LIRE_JEU= "SELECT * FROM jeu WHERE idjeu = $numero";
-    $requeteLireJeu = $pdo->prepare($LIRE_JEU);
-    $requeteLireJeu->execute();
-    $jeu = $requeteLireJeu->fetch();
+    $jeuDAO = new JeuDAO();
+    $jeu = $jeuDAO -> lireJeu($idJeu);
 
     //print_r($jeu);
     //var_dump($jeu);

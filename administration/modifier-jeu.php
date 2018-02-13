@@ -2,14 +2,12 @@
 	//echo "formulaire envoye";
 	include "action-modifier-jeu.php";
 
-    include_once "base-de-donnees.php";
+    $idJeu = $_GET["jeu"];
+	
+	include_once "../accesseur/JeuDAO.php";
 
-    $numero = $_GET["jeu"];
-
-    $LIRE_JEU = "SELECT * FROM jeu WHERE idJeu = $numero";
-    $requeteLireJeu = $pdo->prepare($LIRE_JEU);
-    $requeteLireJeu->execute();
-    $jeu = $requeteLireJeu->fetch();
+	$jeuDAO = new JeuDAO();
+    $jeu = $jeuDAO -> lireJeu($idJeu);
 
     //print_r($jeu);
     //var_dump($jeu);

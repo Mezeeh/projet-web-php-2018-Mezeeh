@@ -1,21 +1,9 @@
 <?php
-	if(!empty($_POST["confirmation-oui"]) || !empty($_POST["confirmation-non"]))
-	{
-		//echo "formulaire envoye";
-		include_once "action-supprimer-jeu.php";
-	}
-
-    include_once "base-de-donnees.php";
-
-    $numero = $_GET["jeu"];
-
-    $LIRE_JEU = "SELECT * FROM jeu WHERE idJeu = $numero";
-    $requeteLireJeu = $pdo->prepare($LIRE_JEU);
-    $requeteLireJeu->execute();
-    $jeu = $requeteLireJeu->fetch();
-
-    //print_r($jeu);
-    //var_dump($jeu);
+	$idJeu = $_GET["jeu"]; 
+	
+	include_once "../accesseur/JeuDAO.php";
+	$jeuDAO = new JeuDAO();
+	$jeu = $jeuDAO -> lireJeu($idJeu);
 ?>
 
 <!doctype html>
