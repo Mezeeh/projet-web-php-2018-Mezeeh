@@ -1,11 +1,10 @@
 <?php
-    $base = "esporthq";
-    $hote = "localhost";
-    $usager = "root";
-    $motDePasse = "sudoroot";
+    //print_r($_POST);
+    //exit(0);
 
-    $dsn = 'mysql:dbname='. $base . ';host=' . $hote;
-    $pdo = new PDO($dsn, $usager, $motDePasse);
+    include "action-ajouter-jeu.php";
+    include "action-supprimer-jeu.php";
+    include_once "base-de-donnees.php";
 
     $requeteListeJeux = $pdo->prepare("SELECT * FROM jeu");
     $requeteListeJeux->execute();

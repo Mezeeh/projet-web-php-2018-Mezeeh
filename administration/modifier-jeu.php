@@ -1,9 +1,6 @@
 <?php
-	if(!empty($_POST["action-modifier-jeu"]))
-	{
-		//echo "formulaire envoye";
-		include "action-modifier-jeu.php";
-	}
+	//echo "formulaire envoye";
+	include "action-modifier-jeu.php";
 
     include_once "base-de-donnees.php";
 
