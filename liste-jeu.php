@@ -1,5 +1,6 @@
 <?php
     include_once "base-de-donnees.php";
+    include "accesseur/JeuDAO.php";
 
     $requeteListeJeux = $pdo->prepare("SELECT * FROM jeu");
     $requeteListeJeux->execute();
