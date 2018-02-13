@@ -23,7 +23,7 @@
             foreach($listeJeu as $jeu)
             {?>
                <div>
-                   <a href="jeu.php?numero=<?=$jeu["idJeu"]?>"><?=$jeu["nom"]?></a>
+                   <a href="jeu.php?jeu=<?=$jeu["idJeu"]?>"><?=$jeu["nom"]?></a>
                </div> 
         <?php
             }

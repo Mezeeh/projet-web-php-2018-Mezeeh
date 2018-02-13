@@ -1,15 +1,9 @@
 <?php
-    $base = "esporthq";
-    $hote = "localhost";
-    $usager = "root";
-    $motDePasse = "sudoroot";
+    include_once "base-de-donnees.php";
 
-    $dsn = 'mysql:dbname='. $base . ';host=' . $hote;
-    $pdo = new PDO($dsn, $usager, $motDePasse);
+    $idJeu = $_GET["jeu"];
 
-    $numero = $_GET["numero"];
-
-    $LIRE_JEU= "SELECT * FROM jeu WHERE idjeu = $numero";
+    $LIRE_JEU= "SELECT * FROM jeu WHERE idjeu = $idJeu";
     $requeteLireJeu = $pdo->prepare($LIRE_JEU);
     $requeteLireJeu->execute();
     $jeu = $requeteLireJeu->fetch();
