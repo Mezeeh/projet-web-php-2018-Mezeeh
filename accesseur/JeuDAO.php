@@ -60,11 +60,19 @@
             $dernierTournoi = $jeu["dernier-tournoi"];
             $idJeu = $jeu["id"];
             
-            $SQL_MODIFIER_JEU = "UPDATE jeu SET nom = '".$nom."', editeur = '".$editeur."', description = '".$description."', 
-            anneePublication = '".$anneePublication."', cashPrizeMax = '".$cashPrizeMax."', spectateursMax = '".$spectateursMax."', 
-            dernierTournoi = '".$dernierTournoi."' WHERE idJeu = " .$idJeu;
+            $SQL_MODIFIER_JEU = "UPDATE jeu SET nom = :nom, editeur = :editeur, description = :description, 
+            anneePublication = :anneePublication, cashPrizeMax = :cashPrizeMax, spectateursMax = :spectateursMax, 
+            dernierTournoi = :dernierTournoi WHERE idJeu = :idJeu";
             
             $requeteModifierJeu = $pdo->prepare($SQL_MODIFIER_JEU);
+            $requeteModifierJeu -> bindParam(':nom', $nom, PDO::PARAM_STR);
+            $requeteModifierJeu -> bindParam(':editeur', $editeur, PDO::PARAM_STR);
+            $requeteModifierJeu -> bindParam(':description', $description, PDO::PARAM_STR);
+            $requeteModifierJeu -> bindParam(':anneePublication', $anneePublication, PDO::PARAM_STR);
+            $requeteModifierJeu -> bindParam(':cashPrizeMax', $cashPrizeMax, PDO::PARAM_STR);
+            $requeteModifierJeu -> bindParam(':spectateursMax', $spectateursMax, PDO::PARAM_INT);
+            $requeteModifierJeu -> bindParam(':dernierTournoi', $dernierTournoi, PDO::PARAM_STR);
+            $requeteModifierJeu -> bindParam(':idJeu', $idJeu, PDO::PARAM_STR);
             $requeteModifierJeu->execute();
         }
 
