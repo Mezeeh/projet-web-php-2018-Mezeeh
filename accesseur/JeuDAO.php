@@ -15,8 +15,9 @@
         function lireJeu($idJeu){
             global $pdo;
 
-            $LIRE_JEU= "SELECT * FROM jeu WHERE idjeu = $idJeu";
+            $LIRE_JEU= "SELECT * FROM jeu WHERE idjeu = :idJeu";
             $requeteLireJeu = $pdo->prepare($LIRE_JEU);
+            $requeteLireJeu->bindParam(":idJeu", $idJeu);
             $requeteLireJeu->execute();
             $jeu = $requeteLireJeu->fetch();
             return $jeu;
@@ -34,9 +35,16 @@
             $dernierTournoi = $jeu["dernier-tournoi"];
             
             $SQL_AJOUTER_JEU = "INSERT into jeu(nom, editeur, description, anneePublication, cashPrizeMax, spectateursMax, dernierTournoi) 
-            VALUES('".$nom."', '".$editeur."', '".$description."', '".$anneePublication."', '".$cashPrizeMax."', '".$spectateursMax."', '".$dernierTournoi."')";
+            VALUES(:nom, :editeur, :description, :anneePublication, :cashPrizeMax, :spectateursMax, :dernierTournoi)";
             
             $requeteAjouterJeu = $pdo->prepare($SQL_AJOUTER_JEU);
+            $requeteAjouterJeu -> bindParam(':nom', $nom, PDO::PARAM_STR);
+            $requeteAjouterJeu -> bindParam(':editeur', $editeur, PDO::PARAM_STR);
+            $requeteAjouterJeu -> bindParam(':description', $description, PDO::PARAM_STR);
+            $requeteAjouterJeu -> bindParam(':anneePublication', $anneePublication, PDO::PARAM_STR);
+            $requeteAjouterJeu -> bindParam(':cashPrizeMax', $cashPrizeMax, PDO::PARAM_STR);
+            $requeteAjouterJeu -> bindParam(':spectateursMax', $spectateursMax, PDO::PARAM_INT);
+            $requeteAjouterJeu -> bindParam(':dernierTournoi', $dernierTournoi, PDO::PARAM_STR);
             $requeteAjouterJeu->execute();
         }
 

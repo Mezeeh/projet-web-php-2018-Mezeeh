@@ -1,7 +1,7 @@
 <?php
     include "accesseur/JeuDAO.php";
 
-    $idJeu = $_GET["jeu"];
+    $idJeu = filter_var($_GET["jeu"], FILTER_SANITIZE_NUMBER_INT);
 
     $jeuDAO = new JeuDAO();
     $jeu = $jeuDAO -> lireJeu($idJeu);
@@ -42,7 +42,7 @@
         </div>
         
         <div>
-            <p>Record de <?=number_format($jeu["spectateursMax"], 2, ',', ' ')?> spectateurs simultanés</p>
+            <p>Record de <?=$jeu["spectateursMax"]?> spectateurs simultanés</p>
         </div>
         
         <div>
