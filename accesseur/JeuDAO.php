@@ -79,9 +79,9 @@
         function supprimerJeu($jeu){
             global $pdo;
 
-            $SQL_EFFACER_JEU = "DELETE FROM jeu WHERE idJeu = " .$_POST["id"];
-			
-			$requeteEffacerJeu = $pdo->prepare($SQL_EFFACER_JEU);
+            $SQL_EFFACER_JEU = "DELETE FROM jeu WHERE idJeu = :idJeu"; 
+            $requeteEffacerJeu = $pdo->prepare($SQL_EFFACER_JEU);
+            $requeteEffacerJeu -> bindParam(":idJeu", $jeu);
 			$requeteEffacerJeu->execute();
         }
     }
