@@ -49,7 +49,7 @@
             <p>Dernier tournoi : <?=$jeu["dernierTournoi"]?></p>
         </div>
 		
-		<a href="index.php">Retour</a>
+		<nav><a href="index.php">Retour</a></nav>
     </section>
 </body>
 </html>

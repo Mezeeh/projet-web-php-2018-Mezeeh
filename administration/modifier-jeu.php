@@ -64,7 +64,7 @@
 			
 			<input type="hidden" name="id" value="<?=$jeu["idJeu"]?>"/>
 			
-			<a href="index.php">Retour</a>
+			<nav><a href="index.php">Retour</a></nav>
 			<input type="submit" name="action-modifier-jeu" value="Enregistrer"/>
 		</form>
 	</section>
