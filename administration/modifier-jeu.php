@@ -1,6 +1,6 @@
 <?php
 	//echo "formulaire envoye";
-	include "action-modifier-jeu.php";
+	include "action/action-modifier-jeu.php";
 
     $idJeu = filter_var($_GET["jeu"], FILTER_SANITIZE_NUMBER_INT);
 	
@@ -21,12 +21,11 @@
 </head>
 <body>
 	<header>
-		<h1>Administration des jeux eSports</h1>
-		<nav></nav>
+		<h1>eSportHQ</h1>
+		<h2>Modifier un jeu</h2>
 	</header>
 	
 	<section id="contenu">
-		<header><h2>Modifier un jeu</h2></header>
 		<form method="post" action="modifier-jeu.php?jeu=<?=$_GET["jeu"]?>">
 			<div>
 				<label for="nom">Nom</label>
@@ -65,6 +64,7 @@
 			
 			<input type="hidden" name="id" value="<?=$jeu["idJeu"]?>"/>
 			
+			<a href="index.php">Retour</a>
 			<input type="submit" name="action-modifier-jeu" value="Enregistrer"/>
 		</form>
 	</section>

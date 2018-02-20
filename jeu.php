@@ -48,6 +48,8 @@
         <div>
             <p>Dernier tournoi : <?=$jeu["dernierTournoi"]?></p>
         </div>
+		
+		<a href="index.php">Retour</a>
     </section>
 </body>
 </html>

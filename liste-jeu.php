@@ -19,10 +19,12 @@
 <body>
 	<header>
         <h1>eSportHQ</h1>
-        <nav></nav>
+        <h2>Jeux eSports</h2>
     </header>
 
 	<section id="contenu">
+		<a href="administration/index.php">Partie administration</a>
+	
         <?php
             foreach($listeJeu as $jeu)
             {?>

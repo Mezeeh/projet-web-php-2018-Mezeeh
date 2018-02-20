@@ -2,9 +2,9 @@
     //print_r($_POST);
     //exit(0);
 
-    include_once "action-ajouter-jeu.php";
-    include_once "action-supprimer-jeu.php";
-    include_once "base-de-donnees.php";;
+    include_once "action/action-ajouter-jeu.php";
+    include_once "action/action-supprimer-jeu.php";
+    include_once "action/base-de-donnees.php";;
 
     include_once "../accesseur/JeuDAO.php";
 
@@ -21,12 +21,14 @@
 <body>
 	<header>
         <h1>eSportHQ</h1>
-        <nav></nav>
+        <h2>Jeux eSports - Administration</h2>
     </header>
 
 	<section id="contenu">
+		<a href="../index.php">Partie public</a>
+	
         <div>
-			<a href="formulaire-jeu.html">Ajouter un jeu eSport</a>
+			<a href="ajouter-jeu.html">Ajouter un jeu eSport</a>
 		</div>
 		
 		<?php

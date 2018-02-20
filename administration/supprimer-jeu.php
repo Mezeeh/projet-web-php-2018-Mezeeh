@@ -14,13 +14,12 @@
 </head>
 <body>
 	<header>
-		<h1>Administration des jeux eSports</h1>
-		<nav></nav>
+		<h1>eSportHQ</h1>
+		<h2>Supprimer un jeu</h2>
 	</header>
 	
 	<section id="contenu">
-		<header><h2>Supprimer un jeu</h2></header>
-		<form method="post" action="liste-jeu.php">
+		<form method="post" action="index.php">
 			<input type="hidden" name="id" value="<?=$jeu["idJeu"]?>"/>
 			
 			Voulez-vous vraiment supprimer <?=$jeu["nom"]?> ?
