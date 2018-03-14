@@ -25,7 +25,7 @@
     <ul>
 		<li><a href="index.php">Accueil</a></li>
 		<li><a href="liste-jeu.php">Jeux eSports</a></li>
-		<li><a href="contact.php">Contact</a></li>
+		<li><a href="contact.html">Contact</a></li>
 	</ul>
     
     <section id="contenu">
