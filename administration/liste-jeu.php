@@ -25,8 +25,6 @@
     </header>
 
 	<section id="contenu">
-		<a href="../index.php">Partie public</a>
-	
         <div>
 			<a href="ajouter-jeu.html">Ajouter un jeu eSport</a>
 		</div>

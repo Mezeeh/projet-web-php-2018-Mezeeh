@@ -19,11 +19,16 @@
 <body>
 	<header>
         <h1>eSportHQ</h1>
-        <h2>Jeux eSports</h2>
     </header>
 
+    <ul>
+		<li><a href="index.php">Accueil</a></li>
+		<li><a href="liste-jeu.php">Jeux eSports</a></li>
+		<li><a href="contact.php">Contact</a></li>
+	</ul>
+
 	<section id="contenu">
-		<a href="administration/index.php">Partie administration</a>
+        <h2>Jeux eSports</h2>
 	
         <?php
             foreach($listeJeu as $jeu)

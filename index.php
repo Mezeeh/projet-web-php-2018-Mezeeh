@@ -33,6 +33,12 @@
         <h1>eSportHQ</h1>
         <nav></nav>
     </header>
+
+	<ul>
+		<li><a href="index.php">Accueil</a></li>
+		<li><a href="liste-jeu.php">Jeux eSports</a></li>
+		<li><a href="contact.php">Contact</a></li>
+	</ul>
     
     <section id="contenu">
         <header><h2>Accueil</h2></header>

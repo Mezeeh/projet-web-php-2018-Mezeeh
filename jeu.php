@@ -21,6 +21,12 @@
         <h1>eSportHQ</h1>
         <nav></nav>
     </header>
+
+    <ul>
+		<li><a href="index.php">Accueil</a></li>
+		<li><a href="liste-jeu.php">Jeux eSports</a></li>
+		<li><a href="contact.php">Contact</a></li>
+	</ul>
     
     <section id="contenu">
         <header><h2><?=$jeu["nom"]?></h2></header>
@@ -49,7 +55,7 @@
             <p>Dernier tournoi : <?=$jeu["dernierTournoi"]?></p>
         </div>
 		
-		<nav><a href="index.php">Retour</a></nav>
+		<nav><a href="liste-jeu.php">Retour</a></nav>
     </section>
 </body>
 </html>
