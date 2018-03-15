@@ -18,9 +18,13 @@
 	<section id="contenu">
 		<header><h2>Ajouter une équipe</h2></header>
 		<form method="post" action="action/action-ajouter-equipe.php?equipe=<?=$idJeu?>">
+            <div>
+                <label for="logo">Logo de l'équipe</label>
+                <input type="file" name="logo" id="logo"/>
+            </div>		
 		
 			<div>
-				<label for="nom">Nom</label>
+				<label for="nom">Nom de l'équipe</label>
 				<input type="text" name="nom" id="nom"/>
 			</div>
 		
@@ -28,12 +32,7 @@
 				<label for="composition">Composition de l'équipe</label>
 				<input type="text" name="composition" id="composition"/>
 			</div>
-			
-			<div>
-				<label for="logo">Logo de l'équipe</label>
-				<input type="file" name="logo" id="logo"/>
-			</div>		
-						
+				
 			<input type="hidden" name="idJeu" value="<?=$idJeu?>"/>
 						
 			<input type="submit" name="action-ajouter-equipe" value="Ajouter"/>

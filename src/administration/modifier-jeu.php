@@ -32,7 +32,7 @@
 	
 	<section id="contenu">
 		<section>
-			<form method="post" action="modifier-jeu.php?jeu=<?=$_GET["jeu"]?>">
+			<form method="post" action="modifier-jeu.php?jeu=<?=$jeu["idJeu"]?>">
 				<div>
 					<label for="nom">Nom</label>
 					<input type="text" name="nom" id="nom" value="<?=$jeu["nom"]?>"/>
