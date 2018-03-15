@@ -1,12 +1,11 @@
 <?php
 if(!empty($_POST['action-modifier-equipe']))
 {
-	$equipe = $_POST; // TODO filter
-	$equipe['idEquipe'] = $_GET['idEquipe']; // TODO filter
-	include_once "base-de-donnees.php";
+    $equipe = $_POST; // TODO filter
+	$equipe['idEquipe'] = $_GET['equipe']; // TODO filter
     
-    $MODIFIER_EQUIPE = "UPDATE equipe SET nom = '".$equipe['nom']."', composition = '".$equipe['composition']."' WHERE idEquipe = '".$equipe['idEquipe']."'";
-    $requeteModifierEquipe = $pdo->prepare($MODIFIER_EQUIPE);
-    $requeteModifierEquipe->execute();
+    include_once "../../accesseur/EquipeDAO.php";
+	$equipeDAO = new EquipeDAO();
+	$equipeDAO -> modifierEquipe($equipe); 
 }
 ?>

@@ -1,13 +1,9 @@
 <?php
-    include "action/action-modifier-equipe.php";
-
-	$idEquipe = filter_var($_GET['idEquipe'], FILTER_SANITIZE_NUMBER_INT);
+    $idEquipe = filter_var($_GET['idEquipe'], FILTER_SANITIZE_NUMBER_INT);
 	
-	$LIRE_EQUIPE = "SELECT * FROM equipe WHERE idEquipe = $idEquipe";
-    include_once "action/base-de-donnees.php";
-    $requeteLireEquipe = $pdo->prepare($LIRE_EQUIPE);
-	$requeteLireEquipe->execute();
-	$equipe = $requeteLireEquipe->fetch();
+	include "../accesseur/EquipeDAO.php";
+	$equipeDAO = new EquipeDAO();
+	$equipe = $equipeDAO->lireEquipe($idEquipe);
 ?>
 <!doctype html>
 <html lang="fr">
@@ -23,7 +19,7 @@
 	
 	<section id="contenu">
 		<header><h2>Modifier une équipe</h2></header>
-        <form method="post" action="modifier-equipe.php?idEquipe=<?=$equipe["idEquipe"]?>">
+        <form method="post" action="action/action-modifier-equipe.php?equipe=<?=$idEquipe?>">
             <div>
                 <label for="logo">Logo de l'équipe</label>
                 <input type="file" name="logo" id="logo"/>

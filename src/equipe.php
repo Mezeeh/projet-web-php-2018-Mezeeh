@@ -1,11 +1,9 @@
 <?php
     $idEquipe = $_GET['idEquipe'];
 
-    $LIRE_EQUIPE = "SELECT * FROM equipe WHERE idEquipe = $idEquipe";
-    include_once "accesseur/base-de-donnees.php";
-    $requeteLireEquipe = $pdo->prepare($LIRE_EQUIPE);
-	$requeteLireEquipe->execute();
-	$equipe = $requeteLireEquipe->fetch();
+	include "accesseur/EquipeDAO.php";
+	$equipeDAO = new EquipeDAO();
+	$equipe = $equipeDAO -> lireEquipe($idEquipe);
 ?>
 <!doctype html>
 <html lang="fr">

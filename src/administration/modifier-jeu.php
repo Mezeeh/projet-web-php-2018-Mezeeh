@@ -11,11 +11,9 @@
 
     //print_r($jeu);
 	//var_dump($jeu);
-	include_once "action/base-de-donnees.php";
-    $LISTER_EQUIPES = "SELECT * FROM equipe WHERE idJeu = " . $idJeu;
-    $requeteListerEquipes = $pdo->prepare($LISTER_EQUIPES);
-    $requeteListerEquipes->execute();
-    $listeEquipes = $requeteListerEquipes->fetchAll();
+	include "../accesseur/EquipeDAO.php";
+	$equipeDAO = new EquipeDAO();
+	$listeEquipes = $equipeDAO -> listerEquipes($idJeu);
 ?>
 
 <!doctype html>

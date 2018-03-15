@@ -1,12 +1,9 @@
 <?php
-	include "action/action-supprimer-equipe.php";
 	$idEquipe = filter_var($_GET['idEquipe'], FILTER_SANITIZE_NUMBER_INT);
     
-    $LIRE_EQUIPE = "SELECT * FROM equipe WHERE idEquipe = $idEquipe";
-    include_once "action/base-de-donnees.php";
-    $requeteLireEquipe = $pdo->prepare($LIRE_EQUIPE);
-    $requeteLireEquipe->execute();
-    $equipe = $requeteLireEquipe->fetch();
+    include "../accesseur/EquipeDAO.php";
+	$equipeDAO = new EquipeDAO();
+	$equipe = $equipeDAO -> lireEquipe($idEquipe);
 ?>
 <!doctype html>
 <html lang="fr">
@@ -22,7 +19,7 @@
 	
 	<section id="contenu">
 		<header><h2>Supprimer une équipe</h2></header>
-		<form method="post" action="modifier-jeu.php?jeu=<?=$equipe['idJeu']?>">
+		<form method="post" action="action/action-supprimer-equipe.php">
 			
 			<input type="hidden" name="id" value="<?=$equipe['idEquipe']?>"/>
 

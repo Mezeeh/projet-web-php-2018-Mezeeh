@@ -5,10 +5,9 @@ if(!empty($_POST['action-effacer-apparition']))
 	{		
 		$idEquipe = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
         
-        include_once "base-de-donnees.php";
-        $SUPPRIMER_EQUIPE = "DELETE FROM equipe WHERE idEquipe = " . $id;
-        $requeteSupprimerEquipe = $pdo->prepare($SUPPRIMER_EQUIPE);
-        $requeteSupprimerEquipe->execute();
+        include_once "../../accesseur/EquipeDAO.php";
+        $equipeDAO = new EquipeDAO();
+        $equipeDAO -> supprimerEquipe($idEquipe); 
 	}
 }
 ?>
