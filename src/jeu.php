@@ -69,7 +69,7 @@
                 foreach($listeEquipes as $equipe){
                     ?>
                 <div>
-                    <a href=""><?=$equipe['nom']?></a>
+                    <a href="equipe.php?idEquipe=<?=$equipe['idEquipe']?>"><?=$equipe['nom']?></a>
                 </div>
                 <?php
                 }
