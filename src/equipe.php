@@ -1,5 +1,5 @@
 <?php
-    $idEquipe = $_GET['idEquipe'];
+    $idEquipe = filter_var($_GET["idEquipe"], FILTER_SANITIZE_NUMBER_INT);;
 
 	include "accesseur/EquipeDAO.php";
 	$equipeDAO = new EquipeDAO();
@@ -16,6 +16,12 @@
 		<h1>eSportHQ</h1>
 		<nav></nav>
 	</header>
+
+	<ul>
+		<li><a href="index.php">Accueil</a></li>
+		<li><a href="liste-jeu.php">Jeux eSports</a></li>
+		<li><a href="contact.html">Contact</a></li>
+	</ul>
 	
 	<section id="contenu">
 		<header><h2><?=$equipe['nom']?></h2></header>

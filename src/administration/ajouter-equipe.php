@@ -1,5 +1,4 @@
 <?php
-	//include "";
 	$idJeu = filter_var($_GET["idJeu"], FILTER_SANITIZE_NUMBER_INT);
 	//echo $idJeu;
 ?>
