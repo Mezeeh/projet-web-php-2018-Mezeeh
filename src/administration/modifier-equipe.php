@@ -1,7 +1,7 @@
 <?php
     $idEquipe = filter_var($_GET['idEquipe'], FILTER_SANITIZE_NUMBER_INT);
 	
-	include "../accesseur/EquipeDAO.php";
+	include_once "../accesseur/EquipeDAO.php";
 	$equipeDAO = new EquipeDAO();
 	$equipe = $equipeDAO->lireEquipe($idEquipe);
 ?>
@@ -20,6 +20,8 @@
 	<section id="contenu">
 		<header><h2>Modifier une équipe</h2></header>
         <form method="post" action="action/action-modifier-equipe.php?equipe=<?=$idEquipe?>">
+            <input type="hidden" name="id" value="<?=$equipe['idEquipe']?>"/>
+
             <div>
                 <label for="logo">Logo de l'équipe</label>
                 <input type="file" name="logo" id="logo"/>

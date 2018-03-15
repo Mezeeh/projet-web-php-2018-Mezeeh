@@ -81,7 +81,7 @@
                 <div>
 					<?=$equipe['nom']?>
                     <a href="modifier-equipe.php?idEquipe=<?=$equipe['idEquipe']?>">Modifier</a>
-                    <a href="supprimer-equipe.php?idEquipe=<?=$equipe['idEquipe']?>">Effacer</a>
+                    <a href="supprimer-equipe.php?idEquipe=<?=$equipe['idEquipe']?>">Supprimer</a>
                 </div>
                 <?php
                 }

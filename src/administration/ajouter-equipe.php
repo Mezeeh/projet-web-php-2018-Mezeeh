@@ -17,7 +17,7 @@
 	
 	<section id="contenu">
 		<header><h2>Ajouter une équipe</h2></header>
-		<form method="post" action="action/action-ajouter-equipe.php">
+		<form method="post" action="action/action-ajouter-equipe.php?equipe=<?=$idJeu?>">
             <div>
                 <label for="logo">Logo de l'équipe</label>
                 <input type="file" name="logo" id="logo"/>
