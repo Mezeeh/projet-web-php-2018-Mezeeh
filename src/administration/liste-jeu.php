@@ -4,7 +4,7 @@
 
     include_once "action/action-ajouter-jeu.php";
     include_once "action/action-supprimer-jeu.php";
-    include_once "action/base-de-donnees.php";;
+    include_once "action/base-de-donnees.php";
 
     include_once "../accesseur/JeuDAO.php";
 

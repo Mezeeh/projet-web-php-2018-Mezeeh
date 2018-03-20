@@ -5,7 +5,7 @@ if(!empty($_POST['action-effacer-apparition']))
 	{		
 		$idEquipe = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
         
-        include_once "../../accesseur/EquipeDAO.php";
+        include_once "../accesseur/EquipeDAO.php";
         $equipeDAO = new EquipeDAO();
         $equipeDAO -> supprimerEquipe($idEquipe); 
 	}

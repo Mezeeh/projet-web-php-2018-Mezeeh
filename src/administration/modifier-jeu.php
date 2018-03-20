@@ -2,6 +2,10 @@
 	//echo "formulaire envoye";
 	include "action/action-modifier-jeu.php";
 
+	include "action/action-ajouter-equipe.php";
+	include "action/action-modifier-equipe.php";
+	include "action/action-supprimer-equipe.php";
+
     $idJeu = filter_var($_GET["jeu"], FILTER_SANITIZE_NUMBER_INT);
 	
 	include_once "../accesseur/JeuDAO.php";
@@ -11,7 +15,7 @@
 
     //print_r($jeu);
 	//var_dump($jeu);
-	include "../accesseur/EquipeDAO.php";
+	include_once "../accesseur/EquipeDAO.php";
 	$equipeDAO = new EquipeDAO();
 	$listeEquipes = $equipeDAO -> listerEquipes($idJeu);
 ?>
@@ -80,8 +84,8 @@
                     ?>
                 <div>
 					<?=$equipe['nom']?>
-                    <a href="modifier-equipe.php?idEquipe=<?=$equipe['idEquipe']?>">Modifier</a>
-                    <a href="supprimer-equipe.php?idEquipe=<?=$equipe['idEquipe']?>">Supprimer</a>
+                    <a href="modifier-equipe.php?idEquipe=<?=$equipe['idEquipe']?>&idJeu=<?=$equipe['idJeu']?>">Modifier</a>
+                    <a href="supprimer-equipe.php?idEquipe=<?=$equipe['idEquipe']?>&idJeu=<?=$equipe['idJeu']?>">Supprimer</a>
                 </div>
                 <?php
                 }

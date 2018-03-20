@@ -1,5 +1,6 @@
 <?php
 	$idJeu = filter_var($_GET["idJeu"], FILTER_SANITIZE_NUMBER_INT);
+	
 	//echo $idJeu;
 ?>
 
@@ -32,8 +33,6 @@
 				<label for="composition">Composition de l'équipe</label>
 				<input type="text" name="composition" id="composition"/>
 			</div>
-				
-			<input type="hidden" name="idJeu" value="<?=$idJeu?>"/>
 						
 			<input type="submit" name="action-ajouter-equipe" value="Ajouter"/>
 			

@@ -1,5 +1,6 @@
 <?php
 	$idEquipe = filter_var($_GET['idEquipe'], FILTER_SANITIZE_NUMBER_INT);
+	$idJeu = filter_var($_GET['idJeu'], FILTER_SANITIZE_NUMBER_INT);
     
     include_once "../accesseur/EquipeDAO.php";
 	$equipeDAO = new EquipeDAO();
@@ -19,7 +20,7 @@
 	
 	<section id="contenu">
 		<header><h2>Supprimer une équipe</h2></header>
-		<form method="post" action="action/action-supprimer-equipe.php">
+		<form method="post" action="modifier-jeu.php?jeu=<?=$idJeu?>">
 			
 			<input type="hidden" name="id" value="<?=$idEquipe?>"/>
 
