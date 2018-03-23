@@ -28,12 +28,14 @@
             $idJeu = $equipe['idJeu'];
             $nom = $equipe['nom'];
             $composition = $equipe['composition'];
+            $logo = $equipe['logo'];
 
-            $AJOUTER_EQUIPE = "INSERT INTO equipe(idJeu, nom, composition) VALUES(:idJeu, :nom, :composition)";
+            $AJOUTER_EQUIPE = "INSERT INTO equipe(idJeu, nom, composition, logo) VALUES(:idJeu, :nom, :composition, :logo)";
             $requeteAjouterEquipe = $pdo->prepare($AJOUTER_EQUIPE);
             $requeteAjouterEquipe->bindParam(":idJeu", $idJeu, PDO::PARAM_INT);
             $requeteAjouterEquipe->bindParam(":nom", $nom, PDO::PARAM_STR);
             $requeteAjouterEquipe->bindParam(":composition", $composition, PDO::PARAM_STR);
+            $requeteAjouterEquipe->bindParam(":logo", $logo, PDO::PARAM_STR);
             $requeteAjouterEquipe->execute();
         }
 
@@ -43,12 +45,14 @@
             $idEquipe = $equipe['idEquipe'];
             $nom = $equipe['nom'];
             $composition = $equipe['composition'];
+            $logo = $equipe['logo'];
 
-            $MODIFIER_EQUIPE = "UPDATE equipe SET nom = :nom, composition = :composition WHERE idEquipe = :idEquipe";
+            $MODIFIER_EQUIPE = "UPDATE equipe SET nom = :nom, composition = :composition, logo = :logo WHERE idEquipe = :idEquipe";
             $requeteModifierEquipe = $pdo->prepare($MODIFIER_EQUIPE);
             $requeteModifierEquipe->bindParam(":nom", $nom, PDO::PARAM_STR);
             $requeteModifierEquipe->bindParam(":composition", $composition,PDO::PARAM_STR);
             $requeteModifierEquipe->bindParam(":idEquipe", $idEquipe, PDO::PARAM_INT);
+            $requeteModifierEquipe->bindParam(":logo", $logo, PDO::PARAM_STR);
             return $requeteModifierEquipe->execute();
         }
 

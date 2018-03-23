@@ -6,7 +6,7 @@ if(!empty($_POST['action-ajouter-equipe']))
     $filtreEquipe = array(
         'idJeu' => FILTER_SANITIZE_NUMBER_INT,
         'nom' => FILTER_SANITIZE_STRING,
-        'composition' => FILTER_SANITIZE_STRING, // TODO : Filtrer pour l'image
+        'composition' => FILTER_SANITIZE_STRING
     );
     $equipe = filter_var_array($_POST, $filtreEquipe);
     //print_r($_FILES["logo"]["name"]);

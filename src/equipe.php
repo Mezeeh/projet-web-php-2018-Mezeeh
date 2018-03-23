@@ -26,6 +26,8 @@
 	<section id="contenu">
 		<header><h2><?=$equipe['nom']?></h2></header>
 
+		<img src="illustration/miniature/<?=$equipe['logo']?>" alt="Logo de <?=$equipe['nom']?>"/>
+
 		<p><?=$equipe['composition']?></p>
 		
 		<nav><a href="jeu.php?jeu=<?=$equipe['idJeu']?>">Retour</a></nav>

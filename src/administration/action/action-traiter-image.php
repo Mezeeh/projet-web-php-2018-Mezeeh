@@ -16,11 +16,11 @@
 	/* echo "<div> Source " . $source . "</div>";
 	echo "<div> Destination " . $destination . "</div>"; */
 	
-	if(move_uploaded_file($source, $destination))
+	/* if(move_uploaded_file($source, $destination))
 	{?>
 			<img src="../illustration/<?=$_FILES["logo"]["name"]?>">
 	<?php
-	}
+	} */
 
 	// Chargement
 	list($width, $height) = getimagesize($destination);
