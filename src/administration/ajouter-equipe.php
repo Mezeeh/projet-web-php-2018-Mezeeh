@@ -4,6 +4,13 @@
 	//echo $idJeu;
 ?>
 
+<style>
+	#composition{
+		width:200px;
+		height:100px;
+	}
+</style>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -18,7 +25,7 @@
 	
 	<section id="contenu">
 		<header><h2>Ajouter une équipe</h2></header>
-		<form method="post" action="modifier-jeu.php?jeu=<?=$idJeu?>">
+		<form method="post" action="modifier-jeu.php?jeu=<?=$idJeu?>" enctype="multipart/form-data">
             <div>
                 <label for="logo">Logo de l'équipe</label>
                 <input type="file" name="logo" id="logo"/>
@@ -29,9 +36,9 @@
 				<input type="text" name="nom" id="nom"/>
 			</div>
 		
-			<div>
+			<div id="comp">
 				<label for="composition">Composition de l'équipe</label>
-				<input type="text" name="composition" id="composition"/>
+				<textarea name="composition" id="composition"></textarea>
 			</div>
 			
 			<input type="hidden" name="idJeu" value="<?=$idJeu?>"/>
