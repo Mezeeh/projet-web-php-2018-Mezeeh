@@ -13,8 +13,8 @@
 	
 	$source = $_FILES["logo"]["tmp_name"];
 	$destination = $_SERVER["DOCUMENT_ROOT"]. "/eSportHQ/projet-web-php-2018-Mezeeh/src/illustration/" . $_FILES["logo"]["name"];
-	/* echo "<div> Source " . $source . "</div>";
-	echo "<div> Destination " . $destination . "</div>"; */
+	echo "<div> Source " . $source . "</div>";
+	echo "<div> Destination " . $destination . "</div>";
 	
 	/* if(move_uploaded_file($source, $destination))
 	{?>

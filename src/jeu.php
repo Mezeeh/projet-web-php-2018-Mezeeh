@@ -23,6 +23,43 @@
 	<header>
         <h1>eSportHQ</h1>
         <nav></nav>
+
+        <style>
+            .equipe{
+                float: left;
+                position: relative;
+                margin-right:5px;
+                margin-bottom: 5px;
+                /* background-color:pink; */
+                width:120px;
+                height:120px;
+                border-radius:50%;
+                overflow:hidden;
+            }
+
+            .equipe:hover .vignette-texte{
+                display:block;
+            }
+
+            .liste-equipe::after{
+                content:"";
+                display:block;
+                clear:both;
+            }
+            .vignette-texte{
+                display:none;
+                position:absolute;
+                top:0px;
+                left:0px;
+                font-weight: bold;
+                height:100%;
+                width:100%;
+                text-align:center;
+                line-height:120px;
+                background-color:rgba(173, 198, 192, 0.4);
+            }
+
+        </style>
     </header>
 
     <ul>
@@ -60,15 +97,20 @@
             </div>
         </section>
 
-        <section>
+        <section class="liste-equipe">
             <h3>Équipes</h3>
 
             <?php
                 foreach($listeEquipes as $equipe){
                     ?>
-                <div>
-                    <a href="equipe.php?idEquipe=<?=$equipe['idEquipe']?>"><?=$equipe['nom']?></a>
-                </div>
+                    <div class="equipe">
+                        <a class="illustration" href="equipe.php?idEquipe=<?=$equipe['idEquipe']?>">
+                        <img src="illustration/miniature/<?=$equipe['logo']?>" alt="Miniature du logo de <?=$equipe['nom']?>"/>
+                            <div class="vignette-texte">
+                                <?=$equipe['nom']?>
+                            </div>
+                        </a>
+                    </div>
                 <?php
                 }
                 ?>

@@ -26,7 +26,7 @@
 	<section id="contenu">
 		<header><h2><?=$equipe['nom']?></h2></header>
 
-		<img src="illustration/miniature/<?=$equipe['logo']?>" alt="Logo de <?=$equipe['nom']?>"/>
+		<img src="illustration/<?=$equipe['logo']?>" alt="Logo de <?=$equipe['nom']?>"/>
 
 		<p><?=$equipe['composition']?></p>
 		
