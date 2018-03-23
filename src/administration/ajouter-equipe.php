@@ -4,18 +4,24 @@
 	//echo $idJeu;
 ?>
 
-<style>
-	#composition{
-		width:200px;
-		height:100px;
-	}
-</style>
+
 
 <!doctype html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<title>eSportHQ</title>
+	<style>
+		#comp {
+			position:relative;
+			height:100px;
+		}
+		#comp label, #composition{
+			display:inline-block;
+			vertical-align: top;
+			height:100%;
+		}
+	</style>	
 </head>
 <body>
 	<header>

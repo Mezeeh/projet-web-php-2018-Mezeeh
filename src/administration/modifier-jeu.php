@@ -30,6 +30,18 @@
 	<header>
 		<h1>eSportHQ</h1>
 		<h2>Modifier un jeu</h2>
+
+		<style>
+			#desc {
+				position:relative;
+				height:100px;
+			}
+			#desc label, #description{
+				display:inline-block;
+				vertical-align: top;
+				height:100%;
+			}
+		</style>
 	</header>
 	
 	<section id="contenu">
@@ -45,7 +57,7 @@
 					<input type="text" name="editeur" id="editeur" value="<?=$jeu["editeur"]?>"/>
 				</div>
 				
-				<div>
+				<div id="desc">
 					<label for="description">Description</label>
 					<textarea name="description" id="description"><?=$jeu["description"]?></textarea>
 				</div>

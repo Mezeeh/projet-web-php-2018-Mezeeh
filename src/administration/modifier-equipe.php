@@ -7,13 +7,6 @@
 	$equipe = $equipeDAO->lireEquipe($idEquipe);
 ?>
 
-<style>
-	#composition{
-		width:200px;
-		height:100px;
-	}
-</style>
-
 <!doctype html>
 <html lang="fr">
 <head>
@@ -24,6 +17,18 @@
 	<header>
 		<h1>eSportHQ</h1>
 		<nav></nav>
+
+		<style>
+			#comp {
+				position:relative;
+				height:100px;
+			}
+			#comp label, #composition{
+				display:inline-block;
+				vertical-align: top;
+				height:100%;
+			}
+		</style>
 	</header>
 	
 	<section id="contenu">
@@ -39,9 +44,8 @@
 				<input type="text" name="nom" id="nom" value="<?=$equipe['nom']?>"/>
 			</div>
 			
-			<div>
+			<div id="comp">
 				<label for="composition">Composition de l'équipe</label>
-				<!-- <input type="text" name="composition" id="composition" value="<?=$equipe['composition']?>"/> -->
 				<textarea name="composition" id="composition"><?=$equipe['composition']?></textarea>
 			</div>
 			

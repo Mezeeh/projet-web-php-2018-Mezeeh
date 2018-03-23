@@ -7,6 +7,18 @@
 <body>
 	<header>
 		<h1>eSportHQ</h1>
+
+		<style>
+			#desc {
+				position:relative;
+				height:100px;
+			}
+			#desc label, #description{
+				display:inline-block;
+				vertical-align: top;
+				height:100%;
+			}
+		</style>
 	</header>
 	
 	<section id="contenu">
@@ -23,7 +35,7 @@
 				<input type="text" name="editeur" id="editeur"/>
 			</div>
 			
-			<div>
+			<div id="desc">
 				<label for="description">Description</label>
 				<textarea name="description" id="description"></textarea>
 			</div>
