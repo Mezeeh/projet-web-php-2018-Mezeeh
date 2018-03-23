@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le :  jeu. 15 mars 2018 à 05:33
+-- Généré le :  ven. 23 mars 2018 à 15:52
 -- Version du serveur :  5.7.20
 -- Version de PHP :  7.1.13
 
@@ -33,7 +33,7 @@ CREATE TABLE `equipe` (
   `idJeu` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `composition` text NOT NULL,
-  `logo` blob
+  `logo` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -41,13 +41,13 @@ CREATE TABLE `equipe` (
 --
 
 INSERT INTO `equipe` (`idEquipe`, `idJeu`, `nom`, `composition`, `logo`) VALUES
-(1, 1, 'FaZe', 'karrigan\r\nolofmeister\r\nGuardiaN\r\nNiKo\r\nrain', NULL),
-(2, 1, 'Cloud9', 'Skadoodle\r\nRUSH\r\ntarik\r\nautimatic\r\nStewie2K', NULL),
-(3, 1, 'SK', 'FalleN\r\nfer\r\nboltz\r\ncoldzera\r\nTACO', NULL),
-(4, 2, 'Fnatic', 'sOAZ\r\nBroxah\r\nCaps\r\nRekkles\r\nHylissang\r\nBwipo\r\nJesiz', NULL),
-(5, 2, 'G2 Esports', 'Wunder\r\nJankos\r\nPerkz\r\nHjarnan\r\nWadid\r\nSacre', NULL),
-(6, 3, 'Dallas Fuel', 'OGE\r\nRascal\r\naKm\r\nCusta\r\nTaimou\r\nEFFECT\r\nSeagull\r\nMickie\r\ncocco\r\nchipshajen\r\nHarryHook', NULL),
-(7, 3, 'San Francisco Shock', 'Architect\r\nmoth\r\niddqd\r\nbabybay\r\nDanteh\r\nNevix\r\nnomy\r\ndhaK\r\nsleepy', NULL);
+(1, 1, 'FaZe', 'karrigan\r\nolofmeister\r\nGuardiaN\r\nNiKo\r\nrain', 'logo-faze.jpg'),
+(2, 1, 'Cloud9', 'Skadoodle\r\nRUSH\r\ntarik\r\nautimatic\r\nStewie2K', 'logo-cloud9.jpg'),
+(3, 1, 'SK', 'FalleN\r\nfer\r\nboltz\r\ncoldzera\r\nTACO', 'logo-sk.jpg'),
+(4, 2, 'Fnatic', 'sOAZ\r\nBroxah\r\nCaps\r\nRekkles\r\nHylissang\r\nBwipo\r\nJesiz', 'logo-fnatic.jpg'),
+(5, 2, 'G2 Esports', 'Wunder\r\nJankos\r\nPerkz\r\nHjarnan\r\nWadid\r\nSacre', 'logo-g2-esport.jpg'),
+(6, 3, 'Dallas Fuel', 'OGE\r\nRascal\r\naKm\r\nCusta\r\nTaimou\r\nEFFECT\r\nSeagull\r\nMickie\r\ncocco\r\nchipshajen\r\nHarryHook', 'logo-dallas-fuel.jpg'),
+(7, 3, 'San Francisco Shock', 'Architect\r\nmoth\r\niddqd\r\nbabybay\r\nDanteh\r\nNevix\r\nnomy\r\ndhaK\r\nsleepy', 'logo-san-francisco-shock.jpg');
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,7 @@ CREATE TABLE `jeu` (
 --
 
 INSERT INTO `jeu` (`idJeu`, `description`, `editeur`, `nom`, `anneePublication`, `cashPrizeMax`, `spectateursMax`, `dernierTournoi`) VALUES
-(1, 'Counter-Strike: Global Offensive est un jeu de tir à la première personne multijoueur en ligne basé sur le jeu d\'équipe.', 'Valve Corporation', 'Counter-Strike: Global Offensive', '2012-08-21', '1100000.00', 1897741, 'ELEAGUE Major: Boston'),
+(1, 'Counter-Strike: Global Offensive est un jeu de tir à la première personne multijoueur en ligne basé sur le jeu d&#39;équipe.', 'Valve Corporation', 'Counter-Strike: Global Offensive', '2012-08-21', '1100000.00', 1897741, 'ELEAGUE Major: Boston'),
 (2, 'Que vous jouiez en solo ou en coopération avec des amis, League of Legends est un jeu de stratégie/action et hautement compétitif, couçu pour ceux qui aiment se battre pour la victoire.', 'Riot Games', 'League of Legends', '2009-10-27', '5070000.00', 106210010, 'LPL Spring 2018'),
 (3, 'Overwatch est un jeu vidéo de tir en vue subjective, en équipes et en ligne.', 'Blizzard Entertainment', 'Overwatch', '2016-05-25', '3500000.00', 2654222, 'Overwatch League - Inaugural Season');
 
@@ -99,13 +99,13 @@ ALTER TABLE `jeu`
 -- AUTO_INCREMENT pour la table `equipe`
 --
 ALTER TABLE `equipe`
-  MODIFY `idEquipe` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idEquipe` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT pour la table `jeu`
 --
 ALTER TABLE `jeu`
-  MODIFY `idJeu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idJeu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
