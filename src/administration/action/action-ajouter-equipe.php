@@ -8,7 +8,7 @@ if(!empty($_POST['action-ajouter-equipe']))
     );
     $equipe = filter_var_array($_POST, $filtreEquipe);
     
-    include_once "../../accesseur/EquipeDAO.php";
+    include_once "../accesseur/EquipeDAO.php";
     $equipeDAO = new EquipeDAO();
 	$equipeDAO -> ajouterEquipe($equipe);
 }

@@ -20,23 +20,24 @@
 	
 	<section id="contenu">
 		<header><h2>Modifier une équipe</h2></header>
-        <form method="post" action="action/action-modifier-equipe.php?equipe=<?=$idEquipe?>">
-            <input type="hidden" name="id" value="<?=$equipe['idEquipe']?>"/>
-
+        <form method="post" action="modifier-jeu.php?jeu=<?=$idJeu?>">
             <div>
-                <label for="logo">Logo de l'équipe</label>
+				<label for="logo">Logo de l'équipe</label>
                 <input type="file" name="logo" id="logo"/>
             </div>		
-		
+			
 			<div>
 				<label for="nom">Nom de l'équipe</label>
 				<input type="text" name="nom" id="nom" value="<?=$equipe['nom']?>"/>
 			</div>
-		
+			
 			<div>
 				<label for="composition">Composition de l'équipe</label>
 				<input type="text" name="composition" id="composition" value="<?=$equipe['composition']?>"/>
 			</div>
+			
+			<input type="hidden" name="idJeu" value="<?=$idJeu?>"/>
+			<input type="hidden" name="idEquipe" value="<?=$equipe['idEquipe']?>"/>
 												
 			<input type="submit" name="action-modifier-equipe" value="Enregistrer"/>
         </form>
