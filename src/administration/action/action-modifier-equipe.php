@@ -1,6 +1,8 @@
 <?php
 if(!empty($_POST['action-modifier-equipe']))
 {
+    include_once "action-traiter-image.php";
+
     $filtreEquipe = array(
         'idJeu' => FILTER_SANITIZE_NUMBER_INT,
         'idEquipe' => FILTER_SANITIZE_NUMBER_INT,
