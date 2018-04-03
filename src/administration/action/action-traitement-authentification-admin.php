@@ -9,17 +9,15 @@
 	$admin = filter_input_array(INPUT_POST, $filtreAdmin);
 	//print_r($admin);
 	
-	$SQL_TROUVER_ADMIN = "SELECT * FROM admin WHERE pseudonyme = '" . $admin['pseudonyme'] . "'";
-	$requeteTrouverAdmin = $pdo->prepare($SQL_TROUVER_ADMIN);
-	$requeteTrouverAdmin->execute();
-	$adminTrouve = $requeteTrouverAdmin->fetch();
-	//print_r($adminTrouve);
+	include_once "../../accesseur/AdminDAO.php";
+	$adminDAO = new AdminDAO();
+	$adminTrouve = $adminDAO->trouverAdmin($admin);
 	
 	if(strcmp($admin["motdepasse"],$adminTrouve["motdepasse"]) == 0){	
-		//echo "Authentification reussie";
+		echo "Authentification reussie";
 		$_SESSION['admin'] = array();
 		$_SESSION['admin']['pseudonyme'] = $adminTrouve['pseudonyme'];
-		var_dump($_SESSION);	
+		//var_dump($_SESSION);	
 	}	
 	else{
 		echo "Problème d'authentification";
