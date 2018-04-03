@@ -25,6 +25,9 @@
     </header>
 
 	<section id="contenu">
+        <div >
+            <a href="authentification-admin.html">S'identifier</a>
+        </div>
         <div>
 			<a href="ajouter-jeu.html">Ajouter un jeu eSport</a>
 		</div>
