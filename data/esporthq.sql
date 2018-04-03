@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le :  ven. 23 mars 2018 à 15:52
+-- Généré le :  mar. 03 avr. 2018 à 10:38
 -- Version du serveur :  5.7.20
 -- Version de PHP :  7.1.13
 
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `esporthq`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `pseudonyme` varchar(25) NOT NULL,
+  `motdepasse` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `admin`
+--
+
+INSERT INTO `admin` (`id`, `pseudonyme`, `motdepasse`) VALUES
+(1, 'sudo', 'sudoroot'),
+(2, 'nadine', 'nadine');
 
 -- --------------------------------------------------------
 
@@ -75,9 +95,32 @@ INSERT INTO `jeu` (`idJeu`, `description`, `editeur`, `nom`, `anneePublication`,
 (2, 'Que vous jouiez en solo ou en coopération avec des amis, League of Legends est un jeu de stratégie/action et hautement compétitif, couçu pour ceux qui aiment se battre pour la victoire.', 'Riot Games', 'League of Legends', '2009-10-27', '5070000.00', 106210010, 'LPL Spring 2018'),
 (3, 'Overwatch est un jeu vidéo de tir en vue subjective, en équipes et en ligne.', 'Blizzard Entertainment', 'Overwatch', '2016-05-25', '3500000.00', 2654222, 'Overwatch League - Inaugural Season');
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `membre`
+--
+
+CREATE TABLE `membre` (
+  `id` int(11) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `pseudonyme` varchar(25) NOT NULL,
+  `motdepasse` varchar(25) NOT NULL,
+  `courriel` varchar(255) NOT NULL,
+  `region` varchar(255) NOT NULL,
+  `genre` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `equipe`
@@ -92,8 +135,20 @@ ALTER TABLE `jeu`
   ADD PRIMARY KEY (`idJeu`);
 
 --
+-- Index pour la table `membre`
+--
+ALTER TABLE `membre`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
+
+--
+-- AUTO_INCREMENT pour la table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `equipe`
@@ -106,6 +161,12 @@ ALTER TABLE `equipe`
 --
 ALTER TABLE `jeu`
   MODIFY `idJeu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT pour la table `membre`
+--
+ALTER TABLE `membre`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
