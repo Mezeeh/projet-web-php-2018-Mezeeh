@@ -39,9 +39,9 @@ print_r($_SESSION);
 		
 			<div id="entree-genre">
 				<label for="homme">Homme</label>
-				<input type="radio" id="homme" value="homme" name="homme">
+				<input type="radio" id="homme" value="homme" name="genre" checked>
 				<label for="femme">Femme</label>
-				<input type="radio" id="femme" value="femme" name="femme">
+				<input type="radio" id="femme" value="femme" name="genre">
 			</div>
 			
 			<div id="entree-courriel">
@@ -51,7 +51,7 @@ print_r($_SESSION);
 						
 		</fieldset>
 		
-		<input type="submit" name="action-inscription-identification" value="Suivant">			
+		<input type="submit" name="action-inscription-identification" value="Enregistrer">			
 			
 		</form>
 	

@@ -3,16 +3,18 @@ session_start();
 
 // Traitement de inscription-informations.php
 $filtreMembre = array(
-    'homme' => FILTER_SANITIZE_ENCODED,
-    'femme' => FILTER_SANITIZE_ENCODED,
+    'genre' => FILTER_SANITIZE_ENCODED,
     'courriel' => FILTER_SANITIZE_ENCODED,
 );
+$informations = filter_var_array($_POST, $filtreMembre);
 
-$_SESSION['membre'] = filter_var_array($_POST, $filtreMembre);
+$_SESSION['membre']['genre'] = ($informations['genre'] == 'homme') ? 1 : 0;
+$_SESSION['membre']['courriel'] = $informations['courriel'];
 
-/* include_once "MembreDAO.php";
+print_r($_SESSION['membre']);
+
+/* include_once "../accesseur/MembreDAO.php";
 $membreDAO = new MembreDAO();
-$membreDAO->ajouterMembre($_SESSION['membre']);
- */
-print_r($_SESSION);
+$membreDAO->ajouterMembre($_SESSION['membre']); */
+
 ?>
