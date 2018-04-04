@@ -43,7 +43,7 @@
 	<div>
 		<a href="authentification.html">S'identifier</a>
 		|
-		<a href="">S'inscrire</a>
+		<a href="inscription-identification.php">S'inscrire</a>
 	</div>
 
 	<ul>
