@@ -46,7 +46,7 @@ print_r($_SESSION);
 			
 			<div id="entree-courriel">
 				<label for="courriel">Courriel</label>
-				<input type="text" id="courriel" name="courriel"/>
+				<input type="email" id="courriel" name="courriel"/>
 			</div>	
 						
 		</fieldset>

@@ -13,8 +13,7 @@ $_SESSION['membre']['courriel'] = $informations['courriel'];
 
 print_r($_SESSION['membre']);
 
-/* include_once "../accesseur/MembreDAO.php";
+include_once "../accesseur/MembreDAO.php";
 $membreDAO = new MembreDAO();
-$membreDAO->ajouterMembre($_SESSION['membre']); */
-
+$membreDAO->ajouterMembre($_SESSION['membre']);
 ?>
