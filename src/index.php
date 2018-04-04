@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	//include "liste-jeu.php";
 	date_default_timezone_set('Canada/Eastern');
 	//echo "The time is " . date("h:i:sa");
@@ -20,6 +21,11 @@
 	$minuteRestantAvantDota2TI = floor($minuteRestantAvantDota2TI % 60);
 	$heureRestantAvantDota2TI = floor($heureRestantAvantDota2TI % 24);
 	$jourRestantAvantDota2TI = floor($jourRestantAvantDota2TI);
+
+	if(!empty($_SESSION['membre'])){
+		echo "Bonjour " . $_SESSION['membre']['prenom'];
+		//print_r($_SESSION['membre']);
+	}
 ?>
 
 <!doctype html>
@@ -33,6 +39,12 @@
         <h1>eSportHQ</h1>
         <nav></nav>
     </header>
+
+	<div>
+		<a href="authentification.html">S'identifier</a>
+		|
+		<a href="">S'inscrire</a>
+	</div>
 
 	<ul>
 		<li><a href="index.php">Accueil</a></li>
