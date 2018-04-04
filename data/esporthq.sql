@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le :  mar. 03 avr. 2018 à 10:38
+-- Généré le :  mer. 04 avr. 2018 à 11:42
 -- Version du serveur :  5.7.20
 -- Version de PHP :  7.1.13
 
@@ -21,26 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `esporthq`
 --
-
--- --------------------------------------------------------
-
---
--- Structure de la table `admin`
---
-
-CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
-  `pseudonyme` varchar(25) NOT NULL,
-  `motdepasse` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `admin`
---
-
-INSERT INTO `admin` (`id`, `pseudonyme`, `motdepasse`) VALUES
-(1, 'sudo', 'sudoroot'),
-(2, 'nadine', 'nadine');
 
 -- --------------------------------------------------------
 
@@ -108,19 +88,21 @@ CREATE TABLE `membre` (
   `pseudonyme` varchar(25) NOT NULL,
   `motdepasse` varchar(25) NOT NULL,
   `courriel` varchar(255) NOT NULL,
-  `region` varchar(255) NOT NULL,
+  `admin` tinyint(1) NOT NULL DEFAULT '0',
   `genre` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Index pour les tables déchargées
+-- Déchargement des données de la table `membre`
 --
 
+INSERT INTO `membre` (`id`, `prenom`, `nom`, `pseudonyme`, `motdepasse`, `courriel`, `admin`, `genre`) VALUES
+(1, 'Michael', 'Turcotte', 'root', 'sudoroot', 'micturcotte97@gmail.com', 1, 1),
+(2, 'Joe', 'Blow', 'Joblow', 'sudoroot', 'blowjob@gmail.com', 0, 1);
+
 --
--- Index pour la table `admin`
+-- Index pour les tables déchargées
 --
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `equipe`
@@ -145,12 +127,6 @@ ALTER TABLE `membre`
 --
 
 --
--- AUTO_INCREMENT pour la table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT pour la table `equipe`
 --
 ALTER TABLE `equipe`
@@ -166,7 +142,7 @@ ALTER TABLE `jeu`
 -- AUTO_INCREMENT pour la table `membre`
 --
 ALTER TABLE `membre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
