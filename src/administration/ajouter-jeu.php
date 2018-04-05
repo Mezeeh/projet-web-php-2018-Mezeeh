@@ -1,3 +1,7 @@
+<?php
+	include "action/action-verifier-identite.php";
+?>
+
 <!doctype html>
 <html lang="fr">
 <head>

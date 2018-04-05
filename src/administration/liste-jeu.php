@@ -25,7 +25,7 @@
 
 	<section id="contenu">
         <div>
-			<a href="ajouter-jeu.html">Ajouter un jeu eSport</a>
+			<a href="ajouter-jeu.php">Ajouter un jeu eSport</a>
 		</div>
 		
 		<?php
