@@ -36,7 +36,7 @@
 	<section id="contenu">
 		<header><h2>Inscription d'un membre - Informations</h2></header>
 	
-		<form method="post" action="action/action-validation-authentification.php">
+		<form method="post" action="action/action-validation-inscription.php">
 		
 		
 		<fieldset>
