@@ -1,13 +1,10 @@
 <?php
-    //include_once "base-de-donnees.php";
+    include_once "action/action-affichage-authentification.php";
+
     include "accesseur/JeuDAO.php";
 
     $listeJeuDAO = new JeuDAO();
     $listeJeu = $listeJeuDAO -> lireListe();
-
-    /* $requeteListeJeux = $pdo->prepare("SELECT * FROM jeu");
-    $requeteListeJeux->execute();
-    $listeJeu = $requeteListeJeux->fetchAll(); */
 ?>
 
 <!doctype html>
@@ -24,7 +21,7 @@
     <ul>
 		<li><a href="index.php">Accueil</a></li>
 		<li><a href="liste-jeu.php">Jeux eSports</a></li>
-		<li><a href="contact.html">Contact</a></li>
+		<li><a href="contact.php">Contact</a></li>
 	</ul>
 
 	<section id="contenu">

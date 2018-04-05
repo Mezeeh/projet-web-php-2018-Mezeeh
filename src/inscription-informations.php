@@ -1,16 +1,16 @@
 <?php 
-session_start();
+	include_once "action/action-affichage-authentification.php";
 
-// Traitement de identification.php
-$filtreMembre = array(
-	'prenom' => FILTER_SANITIZE_ENCODED,
-	'nom' => FILTER_SANITIZE_ENCODED,
-	'pseudonyme' => FILTER_SANITIZE_ENCODED,
-	'motdepasse' => FILTER_SANITIZE_ENCODED,
-);
+	// Traitement de identification.php
+	$filtreMembre = array(
+		'prenom' => FILTER_SANITIZE_ENCODED,
+		'nom' => FILTER_SANITIZE_ENCODED,
+		'pseudonyme' => FILTER_SANITIZE_ENCODED,
+		'motdepasse' => FILTER_SANITIZE_ENCODED,
+	);
 
-$_SESSION['membre'] = filter_var_array($_POST, $filtreMembre);
-print_r($_SESSION);
+	$_SESSION['membre'] = filter_var_array($_POST, $filtreMembre);
+	//print_r($_SESSION);
 
 ?>
 
@@ -27,6 +27,12 @@ print_r($_SESSION);
 		<nav></nav>
 	</header>
 	
+	<ul>
+		<li><a href="index.php">Accueil</a></li>
+		<li><a href="liste-jeu.php">Jeux eSports</a></li>
+		<li><a href="contact.php">Contact</a></li>
+	</ul>
+
 	<section id="contenu">
 		<header><h2>Inscription d'un membre - Informations</h2></header>
 	

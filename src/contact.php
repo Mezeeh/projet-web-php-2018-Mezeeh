@@ -1,3 +1,7 @@
+<?php
+	include_once "action/action-affichage-authentification.php";
+?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -12,7 +16,7 @@
     <ul>
 		<li><a href="index.php">Accueil</a></li>
 		<li><a href="liste-jeu.php">Jeux eSports</a></li>
-		<li><a href="contact.html">Contact</a></li>
+		<li><a href="contact.php">Contact</a></li>
 	</ul>
 	
 	<section id="contenu">

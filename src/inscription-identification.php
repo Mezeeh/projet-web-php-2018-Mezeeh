@@ -1,3 +1,7 @@
+<?php
+	include_once "action/action-affichage-authentification.php";
+?>
+
 <!doctype html>
 <html lang="fr">
 <head>
@@ -9,6 +13,12 @@
 		<h1>eSportHQ</h1>
 		<nav></nav>
 	</header>
+
+	<ul>
+		<li><a href="index.php">Accueil</a></li>
+		<li><a href="liste-jeu.php">Jeux eSports</a></li>
+		<li><a href="contact.php">Contact</a></li>
+	</ul>
 	
 	<section id="contenu">
 		<header><h2>Inscription d'un membre - Identification</h2></header>

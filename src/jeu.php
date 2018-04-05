@@ -1,4 +1,6 @@
 <?php
+    include_once "action/action-affichage-authentification.php";
+
     include "accesseur/JeuDAO.php";
 
     $idJeu = filter_var($_GET["jeu"], FILTER_SANITIZE_NUMBER_INT);
@@ -65,7 +67,7 @@
     <ul>
 		<li><a href="index.php">Accueil</a></li>
 		<li><a href="liste-jeu.php">Jeux eSports</a></li>
-		<li><a href="contact.html">Contact</a></li>
+		<li><a href="contact.php">Contact</a></li>
 	</ul>
     
     <section id="contenu">
