@@ -24,9 +24,11 @@
 			$_SESSION['membre']['courriel'] = $membreTrouve['courriel'];
 			$_SESSION['membre']['admin'] = $membreTrouve['admin'];
 			//var_dump($_SESSION);	
+			header('Location: ../index.php');
 		}	
 		else{
 			echo "Problème d'authentification";
+			header('Location: ../authentification.php');
 		}
 	}
 ?>

@@ -17,5 +17,11 @@
         include_once "../accesseur/MembreDAO.php";
         $membreDAO = new MembreDAO();
         $membreDAO->ajouterMembre($_SESSION['membre']);
+
+        if(!empty($_SESSION['membre']['prenom']) && !empty($_SESSION['membre']['nom']) && !empty($_SESSION['membre']['pseudonyme']) &&
+        !empty($_SESSION['membre']['motdepasse']) && ($_SESSION['membre']['genre'] == 0 || $_SESSION['membre']['genre'] == 1) && !empty($_SESSION['membre']['courriel']))
+            header('Location: ../index.php');
+        else
+            header('Location: ../inscription-identification.php');
     }
 ?>
