@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!empty($_SESSION['membre'])){
+    if(!empty($_SESSION['membre']['pseudonyme'])){
 		echo "Bonjour " . $_SESSION['membre']['prenom'];
 		//print_r($_SESSION['membre']);
         echo '<div>

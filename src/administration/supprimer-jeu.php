@@ -1,4 +1,6 @@
 <?php
+	include "action/action-verifier-identite.php";
+
 	$idJeu = filter_var($_GET["jeu"], FILTER_SANITIZE_NUMBER_INT); 
 	
 	include_once "../accesseur/JeuDAO.php";

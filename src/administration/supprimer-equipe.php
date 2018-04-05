@@ -1,4 +1,6 @@
 <?php
+	include "action/action-verifier-identite.php";
+
 	$idEquipe = filter_var($_GET['idEquipe'], FILTER_SANITIZE_NUMBER_INT);
 	$idJeu = filter_var($_GET['idJeu'], FILTER_SANITIZE_NUMBER_INT);
     

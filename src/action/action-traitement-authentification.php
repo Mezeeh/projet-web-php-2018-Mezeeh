@@ -20,6 +20,7 @@
 		$_SESSION['membre']['nom'] = $membreTrouve['nom'];
 		$_SESSION['membre']['pseudonyme'] = $membreTrouve['pseudonyme'];
 		$_SESSION['membre']['courriel'] = $membreTrouve['courriel'];
+		$_SESSION['membre']['admin'] = $membreTrouve['admin'];
 		//var_dump($_SESSION);	
 	}	
 	else{

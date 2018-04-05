@@ -1,6 +1,5 @@
 <?php
-    //print_r($_POST);
-    //exit(0);
+    include "action/action-verifier-identite.php";
 
     include_once "action/action-ajouter-jeu.php";
     include_once "action/action-supprimer-jeu.php";

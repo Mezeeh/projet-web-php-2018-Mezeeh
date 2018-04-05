@@ -1,4 +1,5 @@
 <?php
+	include "action/action-verifier-identite.php";
 	//echo "formulaire envoye";
 	include "action/action-modifier-jeu.php";
 
