@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le :  mer. 04 avr. 2018 à 11:42
+-- Généré le :  jeu. 05 avr. 2018 à 13:12
 -- Version du serveur :  5.7.20
 -- Version de PHP :  7.1.13
 
@@ -98,7 +98,8 @@ CREATE TABLE `membre` (
 
 INSERT INTO `membre` (`id`, `prenom`, `nom`, `pseudonyme`, `motdepasse`, `courriel`, `admin`, `genre`) VALUES
 (1, 'Michael', 'Turcotte', 'root', 'sudoroot', 'micturcotte97@gmail.com', 1, 1),
-(2, 'Joe', 'Blow', 'Joblow', 'sudoroot', 'blowjob@gmail.com', 0, 1);
+(12, 'Nadine', 'St-Amand Giasson', 'nadine', 'nadine', 'nadine@gmail.com', 1, 0),
+(13, 'Util', 'isateur', 'utilisateur', 'qwe123', 'courriel', 0, 1);
 
 --
 -- Index pour les tables déchargées
@@ -130,19 +131,19 @@ ALTER TABLE `membre`
 -- AUTO_INCREMENT pour la table `equipe`
 --
 ALTER TABLE `equipe`
-  MODIFY `idEquipe` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `idEquipe` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `jeu`
 --
 ALTER TABLE `jeu`
-  MODIFY `idJeu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idJeu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `membre`
 --
 ALTER TABLE `membre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
