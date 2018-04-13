@@ -7,9 +7,9 @@
 
     $recherche = "";
     if(!empty($_POST['action-rechercher'])){
-        print_r($_POST);
+        //print_r($_POST);
         $recherche = filter_var($_POST['recherche'], FILTER_SANITIZE_STRING);
-        print_r($recherche);
+        //print_r($recherche);
         $listeJeu = $listeJeuDAO -> rechercherListe($recherche);
     }
     else{

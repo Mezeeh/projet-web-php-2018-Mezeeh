@@ -16,7 +16,7 @@
         function rechercherListe($recherche){
             global $pdo;
 
-            $LISTE_RECHERCHE = "SELECT * FROM `jeu` WHERE nom LIKE '%" . $recherche . "%' OR description LIKE '%" . $recherche . "%' OR editeur LIKE '%" . $recherche . "%'";
+            $LISTE_RECHERCHE = "SELECT * FROM jeu WHERE nom LIKE '%$recherche%' OR description LIKE '%$recherche%' OR editeur LIKE '%$recherche%'";
             $requeteListeJeux = $pdo->prepare($LISTE_RECHERCHE);
             $requeteListeJeux->execute();
             $listeJeu = $requeteListeJeux->fetchAll();
@@ -28,7 +28,7 @@
 
             $LIRE_JEU= "SELECT * FROM jeu WHERE idjeu = :idJeu";
             $requeteLireJeu = $pdo->prepare($LIRE_JEU);
-            $requeteLireJeu->bindParam(":idJeu", $idJeu);
+            $requeteLireJeu->bindParam(":idJeu", $idJeu, PDO::PARAM_INT);
             $requeteLireJeu->execute();
             $jeu = $requeteLireJeu->fetch();
             return $jeu;
@@ -83,7 +83,7 @@
             $requeteModifierJeu -> bindParam(':cashPrizeMax', $cashPrizeMax, PDO::PARAM_STR);
             $requeteModifierJeu -> bindParam(':spectateursMax', $spectateursMax, PDO::PARAM_INT);
             $requeteModifierJeu -> bindParam(':dernierTournoi', $dernierTournoi, PDO::PARAM_STR);
-            $requeteModifierJeu -> bindParam(':idJeu', $idJeu, PDO::PARAM_STR);
+            $requeteModifierJeu -> bindParam(':idJeu', $idJeu, PDO::PARAM_INT);
             $requeteModifierJeu->execute();
         }
 
@@ -92,7 +92,7 @@
 
             $SQL_EFFACER_JEU = "DELETE FROM jeu WHERE idJeu = :idJeu"; 
             $requeteEffacerJeu = $pdo->prepare($SQL_EFFACER_JEU);
-            $requeteEffacerJeu -> bindParam(":idJeu", $jeu);
+            $requeteEffacerJeu -> bindParam(":idJeu", $jeu, PDO::PARAM_INT);
 			$requeteEffacerJeu->execute();
         }
     }
