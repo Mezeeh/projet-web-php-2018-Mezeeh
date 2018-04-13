@@ -6,7 +6,18 @@
         function lireListe(){
             global $pdo;
 
-            $requeteListeJeux = $pdo->prepare("SELECT * FROM jeu");
+            $LISTE_JEU = "SELECT * FROM jeu";
+            $requeteListeJeux = $pdo->prepare($LISTE_JEU);
+            $requeteListeJeux->execute();
+            $listeJeu = $requeteListeJeux->fetchAll();
+            return $listeJeu;
+        }
+
+        function rechercherListe($recherche){
+            global $pdo;
+
+            $LISTE_RECHERCHE = "SELECT * FROM `jeu` WHERE nom LIKE '%" . $recherche . "%' OR description LIKE '%" . $recherche . "%' OR editeur LIKE '%" . $recherche . "%'";
+            $requeteListeJeux = $pdo->prepare($LISTE_RECHERCHE);
             $requeteListeJeux->execute();
             $listeJeu = $requeteListeJeux->fetchAll();
             return $listeJeu;
