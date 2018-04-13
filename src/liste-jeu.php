@@ -38,7 +38,7 @@
 
         <section id="section-recherche">
             <form method="POST" action="" id="formulaire-recherche">
-                <input type="text" name="recherche" id="recherche">
+                <input type="text" name="recherche" id="recherche" value="<?=$recherche?>">
                 <input type="submit"value="Rechercher" name="action-rechercher">
             </form>
         </section>
