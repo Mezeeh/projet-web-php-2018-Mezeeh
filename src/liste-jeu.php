@@ -26,6 +26,14 @@
 
 	<section id="contenu">
         <h2>Jeux eSports</h2>
+
+        <section id="section-recherche">
+            <form method="POST" action="" id="formulaire-recherche">
+                <label for="recherche"></lable>
+                <input type="text" name="recherche" id="recherche">
+                <input type="submit"value="Rechercher">
+            </form>
+        </section>
 	
         <?php
             foreach($listeJeu as $jeu)
