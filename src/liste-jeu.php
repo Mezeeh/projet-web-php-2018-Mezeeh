@@ -4,7 +4,16 @@
     include "accesseur/JeuDAO.php";
 
     $listeJeuDAO = new JeuDAO();
-    $listeJeu = $listeJeuDAO -> lireListe();
+
+    if(!empty($_POST['action-rechercher'])){
+        //print_r($_POST);
+        $recherche = $_POST['recherche'];
+        //print_r($recherche);
+        $listeJeu = $listeJeuDAO -> rechercherListe($recherche);
+    }
+    else{
+        $listeJeu = $listeJeuDAO -> lireListe();
+    }
 ?>
 
 <!doctype html>
@@ -30,7 +39,7 @@
         <section id="section-recherche">
             <form method="POST" action="" id="formulaire-recherche">
                 <input type="text" name="recherche" id="recherche">
-                <input type="submit"value="Rechercher">
+                <input type="submit"value="Rechercher" name="action-rechercher">
             </form>
         </section>
 	
