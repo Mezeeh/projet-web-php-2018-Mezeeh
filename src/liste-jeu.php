@@ -29,7 +29,6 @@
 
         <section id="section-recherche">
             <form method="POST" action="" id="formulaire-recherche">
-                <label for="recherche"></lable>
                 <input type="text" name="recherche" id="recherche">
                 <input type="submit"value="Rechercher">
             </form>
