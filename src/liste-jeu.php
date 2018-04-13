@@ -26,6 +26,11 @@
 <body>
 	<header>
         <h1>eSportHQ</h1>
+        <script type="text/javascript">
+            function rechercherSuggestions(){
+                console.log("onkeyup");
+            }
+        </script>
     </header>
 
     <ul>
@@ -39,7 +44,7 @@
 
         <section id="section-recherche">
             <form method="POST" action="" id="formulaire-recherche">
-                <input type="text" name="recherche" id="recherche" value="<?=$recherche?>">
+                <input type="text" name="recherche" id="recherche" value="<?=$recherche?>" onkeyup="rechercherSuggestions()">
                 <input type="submit"value="Rechercher" name="action-rechercher">
             </form>
         </section>
