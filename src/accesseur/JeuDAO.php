@@ -95,5 +95,18 @@
             $requeteEffacerJeu -> bindParam(":idJeu", $jeu, PDO::PARAM_INT);
 			$requeteEffacerJeu->execute();
         }
+
+        function rechercherCorrespondances($recherche)
+		{
+            global $pdo;
+            
+            $SQL_RECHERCHER_CORRESPONDANCES = "SELECT nom FROM jeu WHERE nom LIKE '%$recherche%'";
+            print_r($SQL_RECHERCHER_CORRESPONDANCES);
+			$requeteRechercherCorrespondances = $pdo->prepare($SQL_RECHERCHER_CORRESPONDANCES);
+			$requeteRechercherCorrespondances->execute();
+			$correspondances = $requeteRechercherCorrespondances->fetchAll();
+			print_r($correspondances);
+			return $correspondances;
+		}
     }
 ?>
