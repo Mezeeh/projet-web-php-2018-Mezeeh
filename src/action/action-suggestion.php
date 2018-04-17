@@ -26,8 +26,8 @@
 	// foreach sur les donnees recues et generer un li par item
 ?>
 
-	<li><a href="#" onclick="afficherSuggestionChoisie('Alerte')">Alerte</a></li>
-	<li><a href="#" onclick="afficherSuggestionChoisie('Abeilles')">Abeilles</a></li>
-	<li><a href="#" onclick="afficherSuggestionChoisie('Accent')">Accent</a></li>
-	<li><a href="#" onclick="afficherSuggestionChoisie('Avanc&eacute;e')">Avanc&eacute;e</a></li>
+    <li><a href="#" onclick="afficherSuggestion('Alerte')">Alerte</a></li>
+    <li><a href="#" onclick="afficherSuggestion('Abeilles')">Abeilles</a></li>
+    <li><a href="#" onclick="afficherSuggestion('Accent')">Accent</a></li>
+    <li><a href="#" onclick="afficherSuggestion('Avanc&eacute;e')">Avanc&eacute;e</a></li>
 </ul>

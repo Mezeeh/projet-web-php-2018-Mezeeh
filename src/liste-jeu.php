@@ -46,6 +46,12 @@
                 document.querySelector("#boite-suggestions").style.display = "block";
                 document.querySelector("#boite-suggestions").innerHTML = suggestions;
             }
+
+            function afficherSuggestion(suggestion)
+            {
+                document.querySelector('#recherche').value=suggestion;
+                document.querySelector("#boite-suggestions").style.display = "none";			
+            }
         </script>
         <style>
             #section-recherche
