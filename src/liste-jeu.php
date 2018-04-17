@@ -42,7 +42,7 @@
             function recevoirLesSuggestions(ajax){
                 //console.log("recevoirLesSuggestions");
                 suggestions = ajax.responseText;
-			    console.log('suggestions='+suggestions);
+			    //console.log('suggestions='+suggestions);
 
                 document.querySelector("#boite-suggestions").style.display = "block";
                 document.querySelector("#boite-suggestions").innerHTML = suggestions;

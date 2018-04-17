@@ -9,7 +9,7 @@
 	 **/
 
     //print_r($_GET);
-	$recherche = $_GET['recherche']; // TODO : filtrer
+	$recherche = filter_var($_GET['recherche'], FILTER_SANITIZE_STRING);
 
 	// SECTION PREPARATION DES DONNEES
 	    

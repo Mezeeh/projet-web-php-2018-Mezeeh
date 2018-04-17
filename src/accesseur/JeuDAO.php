@@ -16,8 +16,9 @@
         function rechercherListe($recherche){
             global $pdo;
 
-            $LISTE_RECHERCHE = "SELECT * FROM jeu WHERE nom LIKE '%$recherche%' OR description LIKE '%$recherche%' OR editeur LIKE '%$recherche%'";
+            $LISTE_RECHERCHE = "SELECT * FROM jeu WHERE nom LIKE CONCAT('%', :recherche, '%') OR description LIKE CONCAT('%', :recherche, '%') OR editeur LIKE CONCAT('%', :recherche, '%')";
             $requeteListeJeux = $pdo->prepare($LISTE_RECHERCHE);
+            $requeteListeJeux->bindParam(':recherche', $recherche, PDO::PARAM_STR);
             $requeteListeJeux->execute();
             $listeJeu = $requeteListeJeux->fetchAll();
             return $listeJeu;
@@ -99,8 +100,9 @@
         function rechercherSuggestions($recherche){
             global $pdo;
             
-            $SQL_RECHERCHER_CORRESPONDANCES  = "SELECT nom AS terme FROM jeu WHERE nom LIKE '%$recherche%' UNION SELECT description as terme FROM jeu WHERE description LIKE '%$recherche%' UNION SELECT editeur as terme FROM jeu WHERE editeur LIKE '%$recherche%'";
-			$requeteRechercherSuggestions  = $pdo->prepare($SQL_RECHERCHER_CORRESPONDANCES);
+            $SQL_RECHERCHER_CORRESPONDANCES  = "SELECT nom AS terme FROM jeu WHERE nom LIKE CONCAT('%', :recherche, '%') UNION SELECT description as terme FROM jeu WHERE description LIKE CONCAT('%', :recherche, '%') UNION SELECT editeur as terme FROM jeu WHERE editeur LIKE CONCAT('%', :recherche, '%')";
+            $requeteRechercherSuggestions  = $pdo->prepare($SQL_RECHERCHER_CORRESPONDANCES);
+            $requeteRechercherSuggestions->bindParam(':recherche', $recherche, PDO::PARAM_STR);
 			$requeteRechercherSuggestions ->execute();
 			$suggestions = $requeteRechercherSuggestions ->fetchAll();
 			return $suggestions;
