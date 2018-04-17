@@ -51,10 +51,16 @@
             #section-recherche
             {
                 position:relative;
+                width:30em;
+            }
+            #section-recherche input[type=text]
+            {
+                width:300px;
             }
             #boite-suggestions
             {
                 display:none;
+                width:300px;
                 border:solid 2px #ceaf37;
                 background-color:#f7e9b4;
                 position:absolute;
