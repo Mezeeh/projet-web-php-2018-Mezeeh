@@ -31,11 +31,12 @@
             function rechercherSuggestions(){
                 //console.log("onkeyup");
                 recherche = document.querySelector("#recherche").value;
-			    console.log('recherche='+recherche);
+			    parametre = "recherche=" + recherche;
+    			console.log(parametre);
 
                 ajax = new Ajax();
                 url = 'http://localhost/eSportHQ/src/action/action-suggestion.php';
-			    ajax.executer("GET", url, "", recevoirLesSuggestions);
+			    ajax.executer("GET", url, parametre, recevoirLesSuggestions);
             }
 
             function recevoirLesSuggestions(ajax){
