@@ -26,9 +26,18 @@
 <body>
 	<header>
         <h1>eSportHQ</h1>
+        <script type="text/javascript" src="lib/Ajax.js"></script>
         <script type="text/javascript">
             function rechercherSuggestions(){
-                console.log("onkeyup");
+                //console.log("onkeyup");
+
+                ajax = new Ajax();
+                url = 'http://localhost/eSportHQ/src/action/action-suggestion.php';
+			    ajax.executer("GET", url, "", recevoirLesSuggestions);
+            }
+
+            function recevoirLesSuggestions(){
+                console.log("recevoirLesSuggestions");
             }
         </script>
     </header>
