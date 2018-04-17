@@ -31,7 +31,7 @@
             function rechercherSuggestions(){
                 //console.log("onkeyup");
                 recherche = document.querySelector("#recherche").value;
-+			    console.log('recherche='+recherche);
+			    console.log('recherche='+recherche);
 
                 ajax = new Ajax();
                 url = 'http://localhost/eSportHQ/src/action/action-suggestion.php';
@@ -41,9 +41,25 @@
             function recevoirLesSuggestions(ajax){
                 //console.log("recevoirLesSuggestions");
                 suggestions = ajax.responseText;
-+			    console.log('suggestions='+suggestions);
+			    console.log('suggestions='+suggestions);
+
+                document.querySelector("#boite-suggestions").style.display = "block";
+                document.querySelector("#boite-suggestions").innerHTML = suggestions;
             }
         </script>
+        <style>
+            #section-recherche
+            {
+                position:relative;
+            }
+            #boite-suggestions
+            {
+                display:none;
+                border:solid 2px #ceaf37;
+                background-color:#f7e9b4;
+                position:absolute;
+            }
+	    </style>
     </header>
 
     <ul>
@@ -60,6 +76,8 @@
                 <input type="text" name="recherche" id="recherche" value="<?=$recherche?>" onkeyup="rechercherSuggestions()">
                 <input type="submit"value="Rechercher" name="action-rechercher">
             </form>
+
+            <div id="boite-suggestions"></div>
         </section>
 	
         <?php
