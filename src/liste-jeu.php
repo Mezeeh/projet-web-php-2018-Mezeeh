@@ -38,8 +38,10 @@
 			    ajax.executer("GET", url, "", recevoirLesSuggestions);
             }
 
-            function recevoirLesSuggestions(){
-                console.log("recevoirLesSuggestions");
+            function recevoirLesSuggestions(ajax){
+                //console.log("recevoirLesSuggestions");
+                suggestions = ajax.responseText;
++			    console.log('suggestions='+suggestions);
             }
         </script>
     </header>
