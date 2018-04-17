@@ -96,17 +96,14 @@
 			$requeteEffacerJeu->execute();
         }
 
-        function rechercherCorrespondances($recherche)
-		{
+        function rechercherSuggestions($recherche){
             global $pdo;
             
-            $SQL_RECHERCHER_CORRESPONDANCES = "SELECT nom FROM jeu WHERE nom LIKE '%$recherche%'";
-            print_r($SQL_RECHERCHER_CORRESPONDANCES);
-			$requeteRechercherCorrespondances = $pdo->prepare($SQL_RECHERCHER_CORRESPONDANCES);
-			$requeteRechercherCorrespondances->execute();
-			$correspondances = $requeteRechercherCorrespondances->fetchAll();
-			print_r($correspondances);
-			return $correspondances;
+            $SQL_RECHERCHER_CORRESPONDANCES  = "SELECT nom FROM jeu WHERE nom LIKE '%$recherche%'";
+			$requeteRechercherSuggestions  = $pdo->prepare($SQL_RECHERCHER_CORRESPONDANCES);
+			$requeteRechercherSuggestions ->execute();
+			$suggestions = $requeteRechercherSuggestions ->fetchAll();
+			return $suggestions;
 		}
     }
 ?>

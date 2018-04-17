@@ -15,8 +15,8 @@
 	    
     include "../accesseur/JeuDAO.php";
 	$jeuDAO = new JeuDAO();
-	$correspondances = $jeuDAO->rechercherCorrespondances($recherche);
-	print_r($correspondances);
+	$suggestions  = $jeuDAO->rechercherSuggestions($recherche);
+	print_r($suggestions );
 ?>
 
 <ul id="suggestions">
