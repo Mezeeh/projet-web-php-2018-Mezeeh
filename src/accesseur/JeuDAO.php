@@ -99,7 +99,7 @@
         function rechercherSuggestions($recherche){
             global $pdo;
             
-            $SQL_RECHERCHER_CORRESPONDANCES  = "SELECT nom FROM jeu WHERE nom LIKE '%$recherche%'";
+            $SQL_RECHERCHER_CORRESPONDANCES  = "SELECT nom AS terme FROM jeu WHERE nom LIKE '%$recherche%'";
 			$requeteRechercherSuggestions  = $pdo->prepare($SQL_RECHERCHER_CORRESPONDANCES);
 			$requeteRechercherSuggestions ->execute();
 			$suggestions = $requeteRechercherSuggestions ->fetchAll();
