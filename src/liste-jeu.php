@@ -30,6 +30,8 @@
         <script type="text/javascript">
             function rechercherSuggestions(){
                 //console.log("onkeyup");
+                recherche = document.querySelector("#recherche").value;
++			    console.log('recherche='+recherche);
 
                 ajax = new Ajax();
                 url = 'http://localhost/eSportHQ/src/action/action-suggestion.php';
