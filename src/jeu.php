@@ -100,10 +100,10 @@
         </section>
 
         <section id="compte-a-rebours-evenement">
-            <h3 id="nomEvenement">nomEvenement</h3>
+            <h3 id="nomEvenement"><?=$jeu['prochainTournoi']?></h3>
 
             <div id="compteur">
-                compteur
+                <?=$jeu['dateProchainTournoi']?>
             </div>
         </section>
 
