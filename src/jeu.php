@@ -100,9 +100,9 @@
                 //console.log("mettreAJourCompteur");
                 
                 document.querySelector('#joursRestants').innerHTML = joursRestants + "j";
-                document.querySelector('#heuresRestantes').innerHTML = heuresRestantes + "h";
-                document.querySelector('#minutesRestantes').innerHTML = minutesRestantes + "m";
-                document.querySelector('#secondesRestantes').innerHTML = secondesRestantes + "s";
+                document.querySelector('#heuresRestantes').innerHTML = ("0" + heuresRestantes).slice(-2) + "h";
+                document.querySelector('#minutesRestantes').innerHTML = ("0" + minutesRestantes).slice(-2) + "m";
+                document.querySelector('#secondesRestantes').innerHTML = ("0" + secondesRestantes).slice(-2) + "s";
             }
 
             window.onload = demarrerCompteur;
