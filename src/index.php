@@ -13,14 +13,22 @@
 	//echo $dota2TI;
 		 
 	$tempsRestantAvantDota2TI = $dota2TI - time();
-	$minuteRestantAvantDota2TI = $tempsRestantAvantDota2TI / 60;
-	$heureRestantAvantDota2TI = $minuteRestantAvantDota2TI / 60;
-	$jourRestantAvantDota2TI = $heureRestantAvantDota2TI / 24;
 
-	$secondeRestantAvantDota2TI = floor($tempsRestantAvantDota2TI % 60);
-	$minuteRestantAvantDota2TI = floor($minuteRestantAvantDota2TI % 60);
-	$heureRestantAvantDota2TI = floor($heureRestantAvantDota2TI % 24);
-	$jourRestantAvantDota2TI = floor($jourRestantAvantDota2TI);
+	if($tempsRestantAvantDota2TI > 0){
+		$minuteRestantAvantDota2TI = $tempsRestantAvantDota2TI / 60;
+		$heureRestantAvantDota2TI = $minuteRestantAvantDota2TI / 60;
+		$jourRestantAvantDota2TI = $heureRestantAvantDota2TI / 24;
+
+		$secondeRestantAvantDota2TI = floor($tempsRestantAvantDota2TI % 60);
+		$minuteRestantAvantDota2TI = floor($minuteRestantAvantDota2TI % 60);
+		$heureRestantAvantDota2TI = floor($heureRestantAvantDota2TI % 24);
+		$jourRestantAvantDota2TI = floor($jourRestantAvantDota2TI);
+	} else {
+		$secondeRestantAvantDota2TI = 0;
+		$minuteRestantAvantDota2TI = 0;
+		$heureRestantAvantDota2TI = 0;
+		$jourRestantAvantDota2TI = 0;
+	}
 ?>
 
 <!doctype html>

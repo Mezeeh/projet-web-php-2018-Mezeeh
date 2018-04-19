@@ -71,7 +71,7 @@
 
                 ajax = new Ajax();
                 url = 'http://localhost/eSportHQ/src/action/action-actualiser-compte-a-rebours.php';
-			    ajax.executer("GET", url, "", recevoirCompteurAJour);
+			    ajax.executer("GET", url, parametre, recevoirCompteurAJour);
             }
 
             function recevoirCompteurAJour(ajax){
@@ -84,19 +84,21 @@
                 minutesRestantes = reponse.dateProchainTournoi.minutesRestantes;
                 secondesRestantes = reponse.dateProchainTournoi.secondesRestantes;
 
-                console.log(joursRestants);
+                /* console.log(joursRestants);
                 console.log(heuresRestantes);
                 console.log(minutesRestantes);
-                console.log(secondesRestantes);
+                console.log(secondesRestantes); */
 
                 mettreAJourCompteur(joursRestants, heuresRestantes, minutesRestantes, secondesRestantes);
             }
 
             function mettreAJourCompteur(joursRestants, heuresRestantes, minutesRestantes, secondesRestantes){
-                document.querySelector('#joursRestants').value = joursRestants;
-                document.querySelector('#heuresRestantes').value = heuresRestantes;
-                document.querySelector('#minutesRestantes').value = joursRestants;
-                document.querySelector('#secondesRestantes').value = secondesRestantes;
+                //console.log("mettreAJourCompteur");
+                
+                document.querySelector('#joursRestants').innerHTML = joursRestants + " j";
+                document.querySelector('#heuresRestantes').innerHTML = heuresRestantes + " h";
+                document.querySelector('#minutesRestantes').innerHTML = minutesRestantes + " m";
+                document.querySelector('#secondesRestantes').innerHTML = secondesRestantes + " s";
 
                 /* document.querySelector('#joursRestants').style.width = "auto";
                 document.querySelector('#compteur').style.backgroundColor = "red";
@@ -148,10 +150,10 @@
             <input type="hidden" id="dateEvenement" name="dateEvenement" value="<?=$jeu['dateProchainTournoi']?>">
 
             <div id="compteur">
-                <div id="joursRestants">joursRestants</div> j
-                <div id="heuresRestantes">heuresRestantes</div> h
-                <div id="minutesRestantes">minutesRestantes</div> m
-                <div id="secondesRestantes">secondesRestantes</div> s
+                <div id="joursRestants">joursRestants</div>
+                <div id="heuresRestantes">heuresRestantes</div>
+                <div id="minutesRestantes">minutesRestantes</div>
+                <div id="secondesRestantes">secondesRestantes</div>
 
                 avant <?=$jeu['prochainTournoi']?>.
             </div>
