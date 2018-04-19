@@ -1,10 +1,10 @@
 <?php
-    print_r($_POST);
+    //print_r($_GET);
 
     header("Content-type: text/json");
 ?>
 {
-    “dateProchainTournoi”: {
+    "dateProchainTournoi": {
                                 "joursRestants": "joursRestants",
                                 "heuresRestantes": "heuresRestantes",
                                 "minutesRestantes": "minutesRestantes",
