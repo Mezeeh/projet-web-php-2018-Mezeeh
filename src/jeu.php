@@ -68,12 +68,14 @@
         <script type="text/javascript">
             function demarrerCompteur(){
                 //console.log("demarrerCompteur");
-                parametre = "dateEvenement=" + document.querySelector("#dateEvenement").value;
-                console.log(parametre);
+                parametre = "dateEvenement=" + "<?php echo $jeu['dateProchainTournoi']; ?>";
+                //console.log(parametre);
 
                 ajax = new Ajax();
                 url = 'http://localhost/eSportHQ/src/action/action-actualiser-compte-a-rebours.php';
-			    ajax.executer("GET", url, parametre, recevoirCompteurAJour);
+                ajax.executer("GET", url, parametre, recevoirCompteurAJour);
+                
+                setTimeout(demarrerCompteur, 1000); // update le compte a rebours toutes les secondes
             }
 
             function recevoirCompteurAJour(ajax){
@@ -148,8 +150,6 @@
 
         <section id="compte-a-rebours-evenement">
             <h3 id="nomEvenement"><?=$jeu['prochainTournoi']?></h3>
-
-            <input type="hidden" id="dateEvenement" name="dateEvenement" value="<?=$jeu['dateProchainTournoi']?>">
 
             <div id="compteur">
                 <div id="joursRestants">joursRestants</div>
