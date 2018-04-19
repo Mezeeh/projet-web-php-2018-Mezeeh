@@ -103,14 +103,17 @@
                 document.querySelector('#heuresRestantes').innerHTML = heuresRestantes + " h";
                 document.querySelector('#minutesRestantes').innerHTML = minutesRestantes + " m";
                 document.querySelector('#secondesRestantes').innerHTML = secondesRestantes + " s";
-
-                /* document.querySelector('#joursRestants').style.width = "auto";
-                document.querySelector('#compteur').style.backgroundColor = "red";
-                document.querySelector('#compteur').style.display = "inline"; */
             }
 
             window.onload = demarrerCompteur;
         </script>
+
+        <style type="text/css">
+            #compteur, #joursRestants, #heuresRestantes, #minutesRestantes, #secondesRestantes{
+                /* background-color:red; */
+                display: inline-block;
+            }
+        </style>
     </header>
 
     <ul>
