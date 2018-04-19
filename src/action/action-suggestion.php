@@ -8,7 +8,7 @@
 	 ** view-source:http://localhost/autocomplete/suggestion.php?recherche=A
 	 **/
 
-    //print_r($_GET);
+    print_r($_GET);
 	$recherche = filter_var($_GET['recherche'], FILTER_SANITIZE_STRING);
 
 	// SECTION PREPARATION DES DONNEES
@@ -16,7 +16,7 @@
     include "../accesseur/JeuDAO.php";
 	$jeuDAO = new JeuDAO();
 	$suggestions  = $jeuDAO->rechercherSuggestions($recherche);
-	//print_r($suggestions );
+	//print_r($suggestions);
 ?>
 
 <ul id="suggestions">

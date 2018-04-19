@@ -60,8 +60,27 @@
                 line-height:120px;
                 background-color:rgba(173, 198, 192, 0.4);
             }
-
         </style>
+
+        <script type="text/javascript" src="lib/Ajax.js"></script>
+        <script type="text/javascript">
+            function demarrerCompteur(){
+                //console.log("demarrerCompteur");
+                parametre = "dateEvenement=" + document.querySelector("#dateEvenement").value;
+                console.log(parametre);
+
+                ajax = new Ajax();
+                url = 'http://localhost/eSportHQ/src/action/action-actualiser-compte-a-rebours.php';
+			    ajax.executer("GET", url, "", recevoirCompteurAJour);
+            }
+
+            function recevoirCompteurAJour(ajax){
+                console.log("recevoirCompteurAJour");
+                console.log("reponse="+ajax.responseText);
+            }
+
+            window.onload = demarrerCompteur;
+        </script>
     </header>
 
     <ul>
@@ -102,9 +121,11 @@
         <section id="compte-a-rebours-evenement">
             <h3 id="nomEvenement"><?=$jeu['prochainTournoi']?></h3>
 
-            <div id="compteur">
+            <input type="hidden" id="dateEvenement" name="dateEvenement" value="<?=$jeu['dateProchainTournoi']?>">
+
+            <p id="compteur">
                 <?=$jeu['dateProchainTournoi']?>
-            </div>
+            </p>
         </section>
 
         <section class="liste-equipe">
