@@ -99,6 +99,14 @@
             </div>
         </section>
 
+        <section id="compte-a-rebours-evenement">
+            <h3 id="nomEvenement">nomEvenement</h3>
+
+            <div id="compteur">
+                compteur
+            </div>
+        </section>
+
         <section class="liste-equipe">
             <h3>Équipes</h3>
 
