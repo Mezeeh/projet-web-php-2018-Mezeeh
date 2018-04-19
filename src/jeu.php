@@ -13,6 +13,8 @@
     include "accesseur/EquipeDAO.php";
     $equipeDAO = new EquipeDAO();
     $listeEquipes = $equipeDAO -> listerEquipes($idJeu);
+
+    //$dateEvenement = $_GET['dateEvenement'];
 ?>
 
 <!doctype html>
@@ -67,7 +69,7 @@
             function demarrerCompteur(){
                 //console.log("demarrerCompteur");
                 parametre = "dateEvenement=" + document.querySelector("#dateEvenement").value;
-                //console.log(parametre);
+                console.log(parametre);
 
                 ajax = new Ajax();
                 url = 'http://localhost/eSportHQ/src/action/action-actualiser-compte-a-rebours.php';
