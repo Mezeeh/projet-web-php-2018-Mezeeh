@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le :  jeu. 05 avr. 2018 à 13:12
--- Version du serveur :  5.7.20
--- Version de PHP :  7.1.13
+-- Généré le :  mer. 18 avr. 2018 à 23:59
+-- Version du serveur :  5.7.21
+-- Version de PHP :  7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -58,22 +58,24 @@ INSERT INTO `equipe` (`idEquipe`, `idJeu`, `nom`, `composition`, `logo`) VALUES
 CREATE TABLE `jeu` (
   `idJeu` int(11) NOT NULL,
   `description` text NOT NULL,
-  `editeur` text NOT NULL,
-  `nom` text NOT NULL,
+  `editeur` varchar(50) NOT NULL,
+  `nom` varchar(50) NOT NULL,
   `anneePublication` date NOT NULL,
   `cashPrizeMax` decimal(10,2) NOT NULL,
   `spectateursMax` int(11) NOT NULL,
-  `dernierTournoi` text NOT NULL
+  `dernierTournoi` varchar(50) NOT NULL,
+  `prochainTournoi` varchar(50) DEFAULT NULL,
+  `dateProchainTournoi` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `jeu`
 --
 
-INSERT INTO `jeu` (`idJeu`, `description`, `editeur`, `nom`, `anneePublication`, `cashPrizeMax`, `spectateursMax`, `dernierTournoi`) VALUES
-(1, 'Counter-Strike: Global Offensive est un jeu de tir à la première personne multijoueur en ligne basé sur le jeu d&#39;équipe.', 'Valve Corporation', 'Counter-Strike: Global Offensive', '2012-08-21', '1100000.00', 1897741, 'ELEAGUE Major: Boston'),
-(2, 'Que vous jouiez en solo ou en coopération avec des amis, League of Legends est un jeu de stratégie/action et hautement compétitif, couçu pour ceux qui aiment se battre pour la victoire.', 'Riot Games', 'League of Legends', '2009-10-27', '5070000.00', 106210010, 'LPL Spring 2018'),
-(3, 'Overwatch est un jeu vidéo de tir en vue subjective, en équipes et en ligne.', 'Blizzard Entertainment', 'Overwatch', '2016-05-25', '3500000.00', 2654222, 'Overwatch League - Inaugural Season');
+INSERT INTO `jeu` (`idJeu`, `description`, `editeur`, `nom`, `anneePublication`, `cashPrizeMax`, `spectateursMax`, `dernierTournoi`, `prochainTournoi`, `dateProchainTournoi`) VALUES
+(1, 'Counter-Strike: Global Offensive est un jeu de tir à la première personne multijoueur en ligne basé sur le jeu d&#39;équipe.', 'Valve Corporation', 'Counter-Strike: Global Offensive', '2012-08-21', '1100000.00', 1897741, 'ELEAGUE Major: Boston', 'ELEGUE CS:GO Premier 2018', '2018-07-21 14:00:00'),
+(2, 'Que vous jouiez en solo ou en coopération avec des amis, League of Legends est un jeu de stratégie/action et hautement compétitif, couçu pour ceux qui aiment se battre pour la victoire.', 'Riot Games', 'League of Legends', '2009-10-27', '5070000.00', 106210010, 'LPL Spring 2018', 'ALL-STAR EVENT 2018', '2018-12-03 13:00:00'),
+(3, 'Overwatch est un jeu vidéo de tir en vue subjective, en équipes et en ligne.', 'Blizzard Entertainment', 'Overwatch', '2016-05-25', '3500000.00', 2654222, 'Overwatch League - Inaugural Season', 'Overwatch World Cup 2016', '2018-11-04 19:30:00');
 
 -- --------------------------------------------------------
 
