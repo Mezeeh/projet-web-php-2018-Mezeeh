@@ -14,8 +14,10 @@
 	if(!empty($_POST['action-ajouter-equipe'])){	
 		require_once "../configuration/configuration.php";
 		
-		$source = $_FILES["logo"]["tmp_name"];
-		$destination = $site->chemin->illustration . $_FILES['logo']['name'];
+		$champs = 'logo';
+		
+		$source = $_FILES[$champs]["tmp_name"];
+		$destination = $site->chemin->illustration . $_FILES[$champs]['name'];
 		/* echo "<div> Source " . $source . "</div>";
 		echo "<div> Destination " . $destination . "</div>"; */
 		
@@ -49,7 +51,7 @@
 			$hauteurSource = $largeurSource;
 		imagecopyresized($imageMiniature, $imageSource, 0, 0, 0, 0, $largeurMiniature, $hauteurMiniature, $largeurSource, $hauteurSource);
 		
-		$cheminMiniature = $site->chemin->illustration . "miniature/" . $_FILES["logo"]["name"];
+		$cheminMiniature = $site->chemin->miniature . $_FILES[$champs]["name"];
 		//print_r($cheminMiniature);
 
 		// Sauvegarde
