@@ -12,8 +12,13 @@
 	echo "</pre>"; */
 	
 	if(!empty($_POST['action-ajouter-equipe'])){
+		$site = new stdClass();
+		$site->chemin = new stdClass();
+		$site->chemin->racine = $_SERVER['DOCUMENT_ROOT'] . '/eSportHQ/src/';
+		$site->chemin->illustration = $site->chemin->racine . 'illustration/';
+		
 		$source = $_FILES["logo"]["tmp_name"];
-		$destination = $_SERVER["DOCUMENT_ROOT"]. "/eSportHQ/projet-web-php-2018-Mezeeh/src/illustration/" . $_FILES["logo"]["name"];
+		$destination = $site->chemin->illustration . $_FILES['logo']['name'];
 		/* echo "<div> Source " . $source . "</div>";
 		echo "<div> Destination " . $destination . "</div>"; */
 		
@@ -47,7 +52,7 @@
 			$hauteurSource = $largeurSource;
 		imagecopyresized($imageMiniature, $imageSource, 0, 0, 0, 0, $largeurMiniature, $hauteurMiniature, $largeurSource, $hauteurSource);
 		
-		$cheminMiniature = "../illustration/miniature/" . $_FILES["logo"]["name"];
+		$cheminMiniature = $site->chemin->illustration . "miniature/" . $_FILES["logo"]["name"];
 		//print_r($cheminMiniature);
 
 		// Sauvegarde
