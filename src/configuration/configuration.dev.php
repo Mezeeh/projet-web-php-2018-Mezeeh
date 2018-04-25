@@ -21,4 +21,10 @@
 	$traduction->domaine = 'messages';
 	$traduction->locale = 'en_CA'; // $locale = "en_CA";
 	$traduction->locales = ['fr_CA','en_CA'];
+	
+	// Preparation pour la traduction
+	putenv('LC_ALL=' . $traduction->locale);
+	setlocale(LC_ALL, $traduction->locale);
+	bindtextdomain($traduction->domaine, $traduction->chemin);
+	textdomain($traduction->domaine);
 ?>
