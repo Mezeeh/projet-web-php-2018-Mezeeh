@@ -19,6 +19,6 @@
 	$traduction = new stdClass();
 	$traduction->chemin = $site->chemin->racine . 'locale/';
 	$traduction->domaine = 'messages';
-	$traduction->locale = 'en_CA.utf8'; // $locale = "en_CA";
-	$traduction->locales = ['fr_CA.utf8','en_CA.utf8'];
+	$traduction->locale = 'en_CA'; // $locale = "en_CA";
+	$traduction->locales = ['fr_CA','en_CA'];
 ?>
