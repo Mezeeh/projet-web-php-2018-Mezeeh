@@ -11,11 +11,8 @@
 	print_r($_SERVER);
 	echo "</pre>"; */
 	
-	if(!empty($_POST['action-ajouter-equipe'])){
-		$site = new stdClass();
-		$site->chemin = new stdClass();
-		$site->chemin->racine = $_SERVER['DOCUMENT_ROOT'] . '/eSportHQ/src/';
-		$site->chemin->illustration = $site->chemin->racine . 'illustration/';
+	if(!empty($_POST['action-ajouter-equipe'])){	
+		require_once "../configuration/configuration.php";
 		
 		$source = $_FILES["logo"]["tmp_name"];
 		$destination = $site->chemin->illustration . $_FILES['logo']['name'];
