@@ -9,7 +9,7 @@ require('../lib/fpdf/fpdf.php');
 $document = new FPDF();
 $document->AddPage();
 $document->SetFont('Arial','B',16);
-$document->Write(10, 'Jeu ' . $jeu['nom']);
+$document->Write(10, 'Jeu ' . utf8_decode($jeu['nom']));
 $document->Ln();
 $document->Ln();
 $document->Write(10, 'Éditeur: ' . utf8_decode($jeu['editeur']));
