@@ -72,7 +72,7 @@
                 //console.log(parametre);
 
                 ajax = new Ajax();
-                url = 'http://localhost/eSportHQ/src/action/action-actualiser-compte-a-rebours.php';
+                url = 'http://localhost/eSportHQ/projet-web-php-2018-Mezeeh/src/action/action-actualiser-compte-a-rebours.php';
                 ajax.executer("GET", url, parametre, recevoirCompteurAJour);
                 
                 setTimeout(demarrerCompteur, 1000); // update le compte a rebours toutes les secondes
@@ -184,6 +184,7 @@
         </section>
         
         <nav><a href="liste-jeu.php">Retour</a></nav>
+		<nav><a href="export/jeu.php?jeu=<?=$idJeu?>">Exporter en PDF</a></nav>
     </section>
 </body>
 </html>
