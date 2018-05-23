@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>http://149.56.13.19/eSportHQ/index.php</loc>
+  <lastmod>2018-05-23T06:34:26+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://149.56.13.19/eSportHQ/authentification.php</loc>
+  <lastmod>2018-05-23T06:34:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://149.56.13.19/eSportHQ/inscription-identification.php</loc>
+  <lastmod>2018-05-23T06:34:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://149.56.13.19/eSportHQ/liste-jeu.php</loc>
+  <lastmod>2018-05-23T06:34:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://149.56.13.19/eSportHQ/contact.php</loc>
+  <lastmod>2018-05-23T06:34:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://149.56.13.19/eSportHQ/jeu.php?jeu=1</loc>
+  <lastmod>2018-05-23T06:34:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://149.56.13.19/eSportHQ/jeu.php?jeu=2</loc>
+  <lastmod>2018-05-23T06:34:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://149.56.13.19/eSportHQ/jeu.php?jeu=3</loc>
+  <lastmod>2018-05-23T06:34:26+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>http://149.56.13.19/eSportHQ/equipe.php?idEquipe=1</loc>
+  <lastmod>2018-05-23T06:34:26+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://149.56.13.19/eSportHQ/equipe.php?idEquipe=2</loc>
+  <lastmod>2018-05-23T06:34:26+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://149.56.13.19/eSportHQ/equipe.php?idEquipe=3</loc>
+  <lastmod>2018-05-23T06:34:26+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://149.56.13.19/eSportHQ/equipe.php?idEquipe=4</loc>
+  <lastmod>2018-05-23T06:34:26+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://149.56.13.19/eSportHQ/equipe.php?idEquipe=5</loc>
+  <lastmod>2018-05-23T06:34:26+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://149.56.13.19/eSportHQ/equipe.php?idEquipe=6</loc>
+  <lastmod>2018-05-23T06:34:26+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>http://149.56.13.19/eSportHQ/equipe.php?idEquipe=7</loc>
+  <lastmod>2018-05-23T06:34:26+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>
