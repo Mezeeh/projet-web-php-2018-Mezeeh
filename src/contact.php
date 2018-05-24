@@ -21,7 +21,7 @@
 	
 	<section id="contenu">
 		<h2>Contact</h2>
-		<form method="post" action="index.php">
+		<form method="post" action="export/export-jeu-messagerie.php">
 		
 			<div>
 				<label for="nom">Votre nom</label>
@@ -36,6 +36,11 @@
 			<div>
 				<label for="courriel">Votre courriel</label>
 				<input type="email" name="courriel" id="courriel"/>
+			</div>
+			
+			<div>
+				<label for="sujet">Votre sujet</label>
+				<input type="text" name="sujet" id="sujet"/>
 			</div>
 			
 			<div>
