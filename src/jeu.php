@@ -186,6 +186,7 @@
         <nav><a href="liste-jeu.php">Retour</a></nav>
 		<nav><a href="export/export-jeu-pdf.php?jeu=<?=$idJeu?>">Exporter PDF</a></nav>
 		<nav><a href="export/export-jeu-excel.php?jeu=<?=$idJeu?>">Exporter Excel</a></nav>
+		<nav><a href="export/export-jeu-rss.php?jeu=<?=$idJeu?>">Fil RSS</a></nav>
     </section>
 </body>
 </html>
