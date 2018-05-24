@@ -12,7 +12,7 @@
 	$message = new PHPMailer();
 
 	$message->setFrom($infos['courriel']);
-	$message->addAddress('micturcotte97@gmail.com');
+	$message->addAddress('micturcotte97@gmail.com', $infos['nom'] . ', ' . $infos['prenom']);
 	$message->addAddress($infos['courriel']);               
 	//$message->addReplyTo('info@ici.com', 'Information');
 	$message->Subject = $infos['sujet'];
