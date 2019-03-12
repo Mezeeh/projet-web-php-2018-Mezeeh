@@ -3,6 +3,29 @@
     
     class JeuDAO
     {
+        function rechercherCompetition(){
+            global $pdo;
+
+            $LISTE_COMPETITION = "SELECT prochainTournoi FROM jeu";
+            $requeteListeCompetitions = $pdo->prepare($LISTE_COMPETITION);
+            $requeteListeCompetitions->execute();
+            $listeCompetitions = $requeteListeCompetitions->fetchAll();
+
+            return $listeCompetitions;
+        }
+
+        function rechercherDateCompetition($competition){
+            global $pdo;
+
+            $LIRE_DATE_COMPETITION = "SELECT dateProchainTournoi FROM jeu WHERE prochainTournoi = :prochainTournoi";
+            $requeteDateCompetition = $pdo->prepare($LIRE_DATE_COMPETITION);
+            $requeteDateCompetition->bindParam(':prochainTournoi', $competition, PDO::PARAM_STR);
+            $requeteDateCompetition->execute();
+            $dateCompetition = $requeteDateCompetition->fetch();
+
+            return $dateCompetition;
+        }
+
         function lireListe(){
             global $pdo;
 
