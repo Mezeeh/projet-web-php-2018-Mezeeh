@@ -2,7 +2,10 @@
     session_start();
     if(!empty($_SESSION['membre']['pseudonyme'])){
 		echo "Bonjour " . $_SESSION['membre']['prenom'];
-		//print_r($_SESSION['membre']);
+        //print_r($_SESSION['membre']);
+        echo '<div>
+                <a href="mon-compte.php">Mon compte</a>
+            </div>';
         echo '<div>
                 <a href="action/action-deconnexion.php">Se déconnecter</a>
             </div>';
