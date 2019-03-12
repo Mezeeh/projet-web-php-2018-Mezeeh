@@ -1,8 +1,11 @@
 <?php
     include_once "action/action-affichage-authentification.php";
-    var_dump($_SESSION);
 
-    $monCompte = $_SESSION["membre"];
+    include "accesseur/MembreDAO.php";
+
+    $membreDAO = new MembreDAO();
+
+    $monCompte = $membreDAO->trouverAdmin($_SESSION["membre"]);
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +51,9 @@
                     <input type="email" id="courriel" name="courriel" value='<?= $monCompte["courriel"]; ?>'/>
                 </div>	
                 
-            </fieldset>  
+            </fieldset> 
+
+            <input type="hidden" name="pseudonyme" value='<?= $monCompte["pseudonyme"]; ?>'> 
 
             <input type="submit" name="action-modication-identite" value="Sauvegarder les changements">			
 			
@@ -69,6 +74,8 @@
             </div>
 
             </fieldset>
+
+            <input type="hidden" name="pseudonyme" value='<?= $monCompte["pseudonyme"]; ?>'> 
 
             <input type="submit" name="action-modication-securite" value="Sauvegarder les changements">
         </form>
